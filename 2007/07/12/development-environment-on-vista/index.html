@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    開発環境としてのVista
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="http://blog.dataich.com/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://blog.dataich.com/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://blog.dataich.com/theme/css/main.css">
+
+    <link rel="stylesheet" href="http://blog.dataich.com/theme/css/blog.css">
+    <link rel="stylesheet" href="http://blog.dataich.com/theme/css/github.css">
+        <link href="http://blog.dataich.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Cap'n webb Atom Feed" />
+        <script src="http://blog.dataich.com/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="http://blog.dataich.com"><h1><i class="icon-coffee"></i> Cap'n webb</h1></a>
+        <p id="site-desc"></p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+                <li><a href="http://blog.dataich.com/contact">Contact</a></li>
+                <li><a href="http://blog.dataich.com/dicstory">Dicstory</a></li>
+                <li><a href="http://blog.dataich.com/LiveDiag">LiveDiag</a></li>
+        </ul>
+    </nav>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/">Pelican</a> and <a href="http://python.org/">Python</a>. Theme by<a href="https://github.com/hdra/pelican-cait">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/">Dave Grandy</a>.
+    </p>
+</footer></header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2007-07-12T00:00:00" pubdate>
+                            2007/07/12
+                        </time>
+                        <a href="http://blog.dataich.com/2007/07/12/development-environment-on-vista" rel="bookmark"><h1>開発環境としてのVista</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>最近自宅用開発マシンを購入しました。
+前マシンのスペックがあまりにも低かったため買い換えたんですが、いざとなったらXPとデュアルすればいいかと思い、冷もん好き（方言？）なこともありVistaにて。
+まあサクサクと動きます。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>プロセッサ</td>
+<td>AMD Athlon(tm) 64 X2 Dual Core Processor 4600+</td>
+</tr>
+<tr>
+<td>メモリ (RAM)</td>
+<td><em>2.00 GB</em></td>
+</tr>
+<tr>
+<td>グラフィックス</td>
+<td>Radeon X1300/X1550 Series</td>
+</tr>
+</tbody>
+</table>
+<h3>開発環境としての注意点</h3>
+<h4>インストール時</h4>
+<ol>
+<li>プログラム等をインストールする場合、右クリックにて管理者として実行し、C以外のパーティションにインストールする。</li>
+<li>管理者として実行できないインストーラ（.msi等）の場合、コマンドプロンプトを管理者として実行し、「msiexec /i ????????.msi」としてインストーラを起動させる。</li>
+</ol>
+<h4>実行時</h4>
+<p>こちらもやはり右クリックにて管理者として実行。煩わしい場合は、右クリック＞プロパティ＞互換性＞特権レベルの「管理者としてこのプログラムを実行する」にチェックをいれておく。</p>
+<p>これらを意識しておくと、わりかし問題ないです。この方法で、Eclipse、Apache、Tomcat、Cygwin等動かしています。しかしまあ、UACの意味が無くなっているような、、、。まあご愛敬ということで。</p>
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="http://blog.dataich.com/category/misc">misc</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'capnwebb';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+
+<script>
+    var _gaq=[['_setAccount','UA-2954918-13'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+        <script src="http://blog.dataich.com/theme/js/main.js"></script>
+    </body>
+</html>

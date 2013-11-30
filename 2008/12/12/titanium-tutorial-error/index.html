@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    ただTitaniumチュートリアルをやってみただけだがエラーが出たので、ここに書いた
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="http://blog.dataich.com/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://blog.dataich.com/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://blog.dataich.com/theme/css/main.css">
+
+    <link rel="stylesheet" href="http://blog.dataich.com/theme/css/blog.css">
+    <link rel="stylesheet" href="http://blog.dataich.com/theme/css/github.css">
+        <link href="http://blog.dataich.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Cap'n webb Atom Feed" />
+        <script src="http://blog.dataich.com/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="http://blog.dataich.com"><h1><i class="icon-coffee"></i> Cap'n webb</h1></a>
+        <p id="site-desc"></p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+                <li><a href="http://blog.dataich.com/contact">Contact</a></li>
+                <li><a href="http://blog.dataich.com/dicstory">Dicstory</a></li>
+                <li><a href="http://blog.dataich.com/LiveDiag">LiveDiag</a></li>
+        </ul>
+    </nav>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/">Pelican</a> and <a href="http://python.org/">Python</a>. Theme by<a href="https://github.com/hdra/pelican-cait">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/">Dave Grandy</a>.
+    </p>
+</footer></header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2008-12-12T00:00:00" pubdate>
+                            2008/12/12
+                        </time>
+                        <a href="http://blog.dataich.com/2008/12/12/titanium-tutorial-error" rel="bookmark"><h1>ただTitaniumチュートリアルをやってみただけだがエラーが出たので、ここに書いた</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <h2>開発環境</h2>
+<p>Appcelerator SDKとTitanium SDKをインストール</p>
+<blockquote>
+<p><a href="http://appcelerator.org/download">Appcelerator Product Downloads</a><br />
+<a href="http://titaniumapp.com/download">Appcelerator Titanium SDK Downloads</a></p>
+</blockquote>
+<h2>チュートリアってみる。</h2>
+<blockquote>
+<p><a href="http://titaniumapp.com/documentation/starting-your-first-titanium-project">Starting your first Titanium project</a></p>
+</blockquote>
+<p>上記を参考に進めてみた。</p>
+<h4>プロジェクト生成</h4>
+<p>Terminalから</p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">app</span> <span class="n">create</span><span class="o">:</span><span class="n">project</span> <span class="p">.</span> <span class="n">myproject</span> <span class="n">titanium</span>
+</pre></div>
+
+
+<p>下記のように出力されればプロジェクト生成成功。</p>
+<div class="highlight"><pre><span class="n">Using</span> <span class="n">service</span> <span class="n">titanium</span>
+<span class="n">Connecting</span> <span class="n">to</span> <span class="n">update</span> <span class="n">server</span> <span class="p">...</span>
+<span class="n">Fetching</span> <span class="n">release</span> <span class="n">info</span> <span class="n">from</span> <span class="n">distribution</span> <span class="n">server</span><span class="p">...</span>
+<span class="n">Your</span> <span class="n">project</span> <span class="n">was</span> <span class="n">created</span> <span class="n">in</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">yourname</span><span class="o">/</span><span class="n">myproject</span>
+<span class="n">Appcelerator</span> <span class="n">titanium</span> <span class="n">project</span> <span class="n">created</span> <span class="p">...</span> <span class="n">Code</span> <span class="n">strong</span><span class="o">!</span>
+</pre></div>
+
+
+<p>ちなみにSDKのインストールに失敗したのか、最初はうまくいかなかった。
+再インストールしたらうまくいった。</p>
+<h4>プロジェクト（アプリケーション）のパッケージング</h4>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">cd</span> <span class="n">myproject</span>
+<span class="err">$</span> <span class="n">app</span> <span class="n">package</span><span class="o">:</span><span class="n">project</span> <span class="n">osx</span> <span class="err">#</span><span class="n">Windows</span><span class="err">向けの場合は</span><span class="n">win32</span>
+<span class="n">Create</span> <span class="n">directory</span> <span class="p">[</span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">yoshida</span><span class="o">/</span><span class="n">Work</span><span class="o">/</span><span class="n">temp</span><span class="o">/</span><span class="n">myproject</span><span class="o">/</span><span class="n">stage</span><span class="p">]</span><span class="o">?</span> <span class="p">(</span><span class="n">Y</span><span class="p">)</span><span class="n">es</span><span class="p">,(</span><span class="n">N</span><span class="p">)</span><span class="n">o</span><span class="p">,(</span><span class="n">A</span><span class="p">)</span><span class="n">ll</span> <span class="p">[</span><span class="n">Y</span><span class="p">]</span> <span class="n">Y</span>
+<span class="n">Connecting</span> <span class="n">to</span> <span class="n">update</span> <span class="n">server</span> <span class="p">...</span>
+<span class="n">Fetching</span> <span class="n">release</span> <span class="n">info</span> <span class="n">from</span> <span class="n">distribution</span> <span class="n">server</span><span class="p">...</span>
+<span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">1</span><span class="p">)</span> <span class="n">titanium</span><span class="o">:</span><span class="n">osx</span><span class="o">:</span> <span class="mi">0</span><span class="o">%</span> <span class="o">|</span>
+<span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">1</span><span class="p">)</span> <span class="n">titanium</span><span class="o">:</span><span class="n">osx</span><span class="o">:</span> <span class="mi">1</span><span class="o">%</span> <span class="o">|</span>
+<span class="p">...</span>
+<span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">1</span><span class="p">)</span> <span class="n">titanium</span><span class="o">:</span><span class="n">osx</span><span class="o">:</span> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="n">ooooooooooooooooooooooooooooooooooooooooooooooooooooo</span><span class="o">|</span> <span class="mf">5.4</span><span class="n">MB</span> <span class="mf">302.5</span><span class="n">KB</span><span class="o">/</span><span class="n">s</span> <span class="n">ETA</span><span class="o">:</span> <span class="mo">00</span><span class="o">:</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span>
+
+<span class="n">Installed</span> <span class="n">titanium</span><span class="o">:</span><span class="n">osx</span> <span class="mf">0.1</span>
+<span class="n">Packaging</span> <span class="n">Titanium</span> <span class="k">for</span> <span class="n">target</span> <span class="n">os</span><span class="o">:</span> <span class="n">osx</span>
+<span class="n">Validating</span> <span class="n">tiapp</span><span class="p">.</span><span class="n">xml</span> <span class="p">...</span>
+<span class="n">Looks</span> <span class="n">good</span> <span class="p">...</span> <span class="n">Let</span><span class="err">&#39;</span><span class="n">s</span> <span class="n">packager</span> <span class="n">up</span><span class="o">!</span>
+<span class="n">Your</span> <span class="n">Titanium</span> <span class="n">application</span> <span class="n">is</span> <span class="n">located</span> <span class="n">in</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">yoshida</span><span class="o">/</span><span class="n">Work</span><span class="o">/</span><span class="n">temp</span><span class="o">/</span><span class="n">myproject</span><span class="o">/</span><span class="n">stage</span>
+</pre></div>
+
+
+<p>これで/Users/yoshida/Work/temp/myproject/stageにmyproject.appとしてパッケージングされる。
+myproject.appを起動した。</p>
+<p>なんかエラーが出るが、</p>
+<p><img alt="titanium_error" src="http://dl.dropbox.com/u/126064/blog.dataich.com.images/titanium_error.jpg" /></p>
+<p>無視してクリックするとウィンドウが表示された。</p>
+<p><img alt="titanium_sample" src="http://dl.dropbox.com/u/126064/blog.dataich.com.images/titanium_sample.jpg" /></p>
+<p>Javascript APIを使ったサンプルがコード付きで試せるので、いろいろと見てみよう。
+但し、上記エラーのせいか、ボタンクリック系のサンプルが動かない、、、</p>
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="http://blog.dataich.com/category/misc">misc</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'capnwebb';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+
+<script>
+    var _gaq=[['_setAccount','UA-2954918-13'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+        <script src="http://blog.dataich.com/theme/js/main.js"></script>
+    </body>
+</html>

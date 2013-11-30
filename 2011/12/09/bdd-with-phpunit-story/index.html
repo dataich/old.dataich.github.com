@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    PHPUnit_Storyで振舞駆動開発なテストを書いてみた
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="http://blog.dataich.com/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://blog.dataich.com/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://blog.dataich.com/theme/css/main.css">
+
+    <link rel="stylesheet" href="http://blog.dataich.com/theme/css/blog.css">
+    <link rel="stylesheet" href="http://blog.dataich.com/theme/css/github.css">
+        <link href="http://blog.dataich.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Cap'n webb Atom Feed" />
+        <script src="http://blog.dataich.com/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="http://blog.dataich.com"><h1><i class="icon-coffee"></i> Cap'n webb</h1></a>
+        <p id="site-desc"></p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+                <li><a href="http://blog.dataich.com/contact">Contact</a></li>
+                <li><a href="http://blog.dataich.com/dicstory">Dicstory</a></li>
+                <li><a href="http://blog.dataich.com/LiveDiag">LiveDiag</a></li>
+        </ul>
+    </nav>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/">Pelican</a> and <a href="http://python.org/">Python</a>. Theme by<a href="https://github.com/hdra/pelican-cait">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/">Dave Grandy</a>.
+    </p>
+</footer></header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2011-12-09T00:00:00" pubdate>
+                            2011/12/09
+                        </time>
+                        <a href="http://blog.dataich.com/2011/12/09/bdd-with-phpunit-story" rel="bookmark"><h1>PHPUnit_Storyで振舞駆動開発なテストを書いてみた</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>テスト対象としてEntryクラスを作成しました。</p>
+<ul>
+<li>ステータス（下書き・公開済・削除）を持つ。</li>
+<li>初期ステータスは下書き</li>
+<li>ステータスはメソッドを通じて変更できる。</li>
+</ul>
+<script src="https://gist.github.com/1447145.js?file=Entry.php"></script>
+
+<p>まずはテスト駆動開発なテストを行う簡単なテストケースを書いてみました。こんなコードになります。</p>
+<script src="https://gist.github.com/1447145.js?file=EntryTest.php"></script>
+
+<p>実行結果はこうなります。</p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">phpunit</span> <span class="o">--</span><span class="n">debug</span> <span class="n">EntryTest</span><span class="p">.</span><span class="n">php</span> 
+<span class="n">PHPUnit</span> <span class="mf">3.6.2</span> <span class="n">by</span> <span class="n">Sebastian</span> <span class="n">Bergmann</span><span class="p">.</span>
+
+<span class="n">Starting</span> <span class="n">test</span> <span class="err">&#39;</span><span class="n">EntryTest</span><span class="o">::</span><span class="n">testStatus</span><span class="err">&#39;</span><span class="p">.</span>
+<span class="p">.</span>
+
+<span class="nl">Time:</span> <span class="mi">0</span> <span class="n">seconds</span><span class="p">,</span> <span class="n">Memory</span><span class="o">:</span> <span class="mf">5.50</span><span class="n">Mb</span>
+
+<span class="n">OK</span> <span class="p">(</span><span class="mi">1</span> <span class="n">test</span><span class="p">,</span> <span class="mi">3</span> <span class="n">assertions</span><span class="p">)</span>
+</pre></div>
+
+
+<p>これを振舞駆動開発なテストで書きなおしてみました。PHPUnit_Extensions_Story_TestCaseをextendsし、runGiven、runWhen、runThenを実装する必要があります。</p>
+<script src="https://gist.github.com/1447145.js?file=EntrySpec.php"></script>
+
+<p>実行結果はこうです。なんかそれっぽくなりました</p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">phpunit</span> <span class="o">--</span><span class="n">debug</span> <span class="o">--</span><span class="n">verbose</span> <span class="o">--</span><span class="n">printer</span> <span class="n">PHPUnit_Extensions_Story_ResultPrinter_Text</span> <span class="n">EntrySpec</span><span class="p">.</span><span class="n">php</span>
+<span class="n">PHPUnit</span> <span class="mf">3.6.2</span> <span class="n">by</span> <span class="n">Sebastian</span> <span class="n">Bergmann</span><span class="p">.</span>
+
+<span class="n">EntrySpec</span>
+ <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Status</span> <span class="k">for</span> <span class="n">new</span> <span class="n">entry</span> <span class="n">is</span> <span class="n">draft</span>
+
+   <span class="n">Given</span> <span class="n">New</span> <span class="n">Entry</span> 
+    <span class="n">Then</span> <span class="n">Status</span> <span class="n">should</span> <span class="n">be</span> <span class="n">draft</span>
+
+ <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Status</span> <span class="n">after</span> <span class="n">publish</span> <span class="n">entry</span> <span class="n">is</span> <span class="n">published</span>
+
+   <span class="n">Given</span> <span class="n">Some</span> <span class="n">Entry</span> 
+    <span class="n">When</span> <span class="n">publish</span> <span class="n">Entry</span> 
+    <span class="n">Then</span> <span class="n">Status</span> <span class="n">should</span> <span class="n">be</span> <span class="n">published</span>
+
+ <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Status</span> <span class="n">after</span> <span class="n">delete</span> <span class="n">entry</span> <span class="n">is</span> <span class="n">deleted</span>
+
+   <span class="n">Given</span> <span class="n">Some</span> <span class="n">Entry</span> 
+    <span class="n">When</span> <span class="n">delete</span> <span class="n">Entry</span> 
+    <span class="n">Then</span> <span class="n">Status</span> <span class="n">should</span> <span class="n">be</span> <span class="n">deleted</span>
+
+<span class="nl">Scenarios:</span> <span class="mi">3</span><span class="p">,</span> <span class="n">Failed</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Skipped</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Incomplete</span><span class="o">:</span> <span class="mf">0.</span>
+</pre></div>
+
+
+<p>パッと見、コード量が多くなってしまいましたが、テスト対象がサンプル程度なので。実装が増えてきたときに、runGiven、runWhen、runThenを良い感じに使いまわせるようにすると、効果大きそうです。ちなみにPHPUnit、PHPUnit_StoryともにPEARでサクッとインストール可能です。</p>
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="http://blog.dataich.com/category/misc">misc</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'capnwebb';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+
+<script>
+    var _gaq=[['_setAccount','UA-2954918-13'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+        <script src="http://blog.dataich.com/theme/js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,7 @@
+Title: 画面いっぱいのUITextViewがキーボードに隠れないようにする
+
+iPadで画面いっぱいにUITextViewを配置すると、入力状態になった際にキーボードが出てきて入力カーソルが隠れてしまいます。これには「キーボードが表示・非表示になるタイミングで、UITextViewの高さを変えてあげる」ことで対処可能です。
+
+UICatalogのサンプルが少し古く、3.2ではDeprecatedになっているUIKeyboardBoundsUserInfoKeyを使っていたため、UIKeyboardFrameEndUserInfoKeyを使うようにしてみました。恐らくiPhoneでも同じようにできるはずです。
+
+<script src="https://gist.github.com/dataich/356516.js"></script>

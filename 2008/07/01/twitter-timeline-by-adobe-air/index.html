@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    Adobe Airでtwitterタイムラインを取得してみよう。
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="http://blog.dataich.com/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://blog.dataich.com/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://blog.dataich.com/theme/css/main.css">
+
+    <link rel="stylesheet" href="http://blog.dataich.com/theme/css/blog.css">
+    <link rel="stylesheet" href="http://blog.dataich.com/theme/css/github.css">
+        <link href="http://blog.dataich.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Cap'n webb Atom Feed" />
+        <script src="http://blog.dataich.com/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="http://blog.dataich.com"><h1><i class="icon-coffee"></i> Cap'n webb</h1></a>
+        <p id="site-desc"></p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+                <li><a href="http://blog.dataich.com/contact">Contact</a></li>
+                <li><a href="http://blog.dataich.com/dicstory">Dicstory</a></li>
+                <li><a href="http://blog.dataich.com/LiveDiag">LiveDiag</a></li>
+        </ul>
+    </nav>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/">Pelican</a> and <a href="http://python.org/">Python</a>. Theme by<a href="https://github.com/hdra/pelican-cait">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/">Dave Grandy</a>.
+    </p>
+</footer></header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2008-07-01T00:00:00" pubdate>
+                            2008/07/01
+                        </time>
+                        <a href="http://blog.dataich.com/2008/07/01/twitter-timeline-by-adobe-air" rel="bookmark"><h1>Adobe Airでtwitterタイムラインを取得してみよう。</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <h4>前提条件</h4>
+<p>Adobe Flex Builder3がインストール済みであること。（Eclipseプラグインでも可）</p>
+<p>※ダウンロード、インストール方法については、下記Adobeサイトを参照してください。</p>
+<p><a href="http://www.adobe.com/jp/products/flex/">Adobe - Flex 3</a></p>
+<h4>Flex Builder（または、Eclipse）上でのプロジェクト作成</h4>
+<p>1.File &gt; New &gt; Flex Project（見つからない場合は、Otherより探してください。）を選択。</p>
+<p>2.プロジェクト名を'twitter'（任意）とし、アプリケーションの種類を'デスクトップアプリケーション（Adobe Air...）'としてFinishを選択。これで下記構成プロジェクトが作成されます。</p>
+<div class="highlight"><pre><span class="n">twitter</span>
+<span class="err">├──</span> <span class="n">bin</span><span class="o">-</span><span class="n">debug</span>
+<span class="err">├──</span> <span class="n">libs</span>
+<span class="err">└──</span> <span class="n">src</span>
+    <span class="err">├──</span> <span class="n">twitter</span><span class="o">-</span><span class="n">app</span><span class="p">.</span><span class="n">xml</span>
+    <span class="err">└──</span> <span class="n">twitter</span><span class="p">.</span><span class="n">xml</span>
+</pre></div>
+
+
+<h4>ひとまず、Airアプリケーションを実行してみましょう。</h4>
+<ol>
+<li>プロジェクト'twitter'を右クリック &gt; Run As &gt; Adobe Air アプリケーションを選択。</li>
+<li>別画面でAirアプリケーションが起動するはずです。もちろんまだ何もコーディングしていませんので、何も無いウィンドウが表示されるだけです。</li>
+</ol>
+<h4>twitterのタイムラインを表示するための画面コンポーネントの作成</h4>
+<p>twitterのタイムラインを表示するためのコンポーネントとして、ここではmx:DataGridコンポーネントを使用します。</p>
+<ol>
+<li>twitter.mxmlをダブルクリックし、エディターに表示させ、デザインタブをクリック。</li>
+<li>コンポーネントビューのコントロール/DataGridコンポーネントをデザインエディタにドラッグ。</li>
+<li>Airアプリケーションを実行して、確認してください。何もなかったウィンドウにDataGridが表示されてます。</li>
+</ol>
+<h4>twitter apiを使用してタイムラインを取得する。</h4>
+<p>1.まずは、twitterのAPIと通信を行うための、mx:HTTPServiceを作成します。</p>
+<p>twitter.mxmlをダブルクリックし、エディターに表示させ、ソースタブをクリック。mx:WindowedApplicationタグ内に、下記を追加します。</p>
+<div class="highlight"><pre><span class="o">&lt;</span><span class="n">mx</span><span class="o">:</span><span class="n">HTTPService</span>
+  <span class="n">id</span><span class="o">=</span><span class="s">&quot;twitter_timeline&quot;</span>
+  <span class="n">url</span><span class="o">=</span><span class="s">&quot;http://twitter.com/statuses/public_timeline.xml&quot;</span><span class="o">/&gt;</span>
+</pre></div>
+
+
+<p>2.アプリケーション開始時に、このHTTPServiceで通信するよう、mx:WindowedApplicationのcreationCompleteイベント属性に、'twitter_timeline.send()'と記述します。</p>
+<p>3.ここまでで、下記のようになるかと思います。</p>
+<div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;mx:WindowedApplication</span> <span class="na">xmlns:mx=</span><span class="s">&quot;http://www.adobe.com/2006/mxml&quot;</span> <span class="na">layout=</span><span class="s">&quot;absolute&quot;</span> <span class="na">creationComplete=</span><span class="s">&quot;twitter_timeline.send()&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;mx:HTTPService</span>
+    <span class="na">id=</span><span class="s">&quot;twitter_timeline&quot;</span>
+    <span class="na">url=</span><span class="s">&quot;http://twitter.com/statuses/public_timeline.xml&quot;</span><span class="nt">/&gt;</span>
+
+    ...省略
+
+<span class="nt">&lt;/mx:WindowedApplication&gt;</span>
+</pre></div>
+
+
+<p>4.次に、取得したタイムラインを最初に作成したDataGridに表示させます。</p>
+<p>twitterのタイムラインAPIからは、XMLが取得できます。どういうXMLが取得できるかは、<a href="http://twitter.com/statuses/public_timeline.xml">http://twitter.com/statuses/public_timeline.xml</a>にブラウザでアクセスして確認してみてください。</p>
+<p>取得したXMLをDataGridに表示させるには、dataProviderを使用します。ここにはXMLオブジェクト等を指定することができます。具体的にはdataProvider="{twitter_timeline.lastResult.statuses.status}"とします。これは、HTTPServiceであるtwitter_timeline(ID)のlastResultファンクション（取得した内容（オブジェクト、ここではXMLオブジェクト）を返す）のstatusesタグの、statusタグを指定していることになります。</p>
+<p>そして、DataGridのカラムであるmx:DataGridColumnのdataField属性に、"text"と記述します。これはstatusタグのtextタグの内容をセットしています。後はこれがstatusタグの回数分、自動的に出力されます。Airアプリケーションを実行して確認してみてください。</p>
+<div class="highlight"><pre><span class="nt">&lt;mx:DataGrid</span> <span class="na">x=</span><span class="s">&quot;0&quot;</span> <span class="na">y=</span><span class="s">&quot;0&quot;</span> <span class="na">dataProvider=</span><span class="s">&quot;{twitter_timeline.lastResult.statuses.status}&quot;</span>  <span class="nt">&gt;</span>
+  <span class="nt">&lt;mx:columns&gt;</span>
+    <span class="nt">&lt;mx:DataGridColumn</span> <span class="na">headerText=</span><span class="s">&quot;text&quot;</span> <span class="na">dataField=</span><span class="s">&quot;text&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/mx:columns&gt;</span>
+<span class="nt">&lt;/mx:DataGrid&gt;</span>
+</pre></div>
+
+
+<p>5.次に、screen_nameを取得します。</p>
+<p>screen_nameはstatusタグのuserタグの中にあります。通常、DataGridタグ内では、{data}として、dataProviderのデータを取得できます。但し、dataField属性には、使用できません。そこでmx:itemRendererを使用します。これでDaraGridColumn内のレンダリングコンポーネントを差し替えることができます。下記のようにして、mx:labelコンポーネントに差し替えてtext属性に{data.user.screen_name}をセットしています。</p>
+<div class="highlight"><pre><span class="nt">&lt;mx:DataGridColumn</span> <span class="na">headerText=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;mx:itemRenderer&gt;</span>
+    <span class="nt">&lt;mx:Component&gt;</span>
+      <span class="nt">&lt;mx:Label</span> <span class="na">text=</span><span class="s">&quot;{data.user.screen_name}&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/mx:Component&gt;</span>
+  <span class="nt">&lt;/mx:itemRenderer&gt;</span>
+<span class="nt">&lt;/mx:DataGridColumn&gt;</span>
+</pre></div>
+
+
+<p>6.次に、ユーザの画像を表示してみます。</p>
+<p>DataGridColumnに画像を表示するには、itemRendererにmx.controls.Imageを指定します。これにより、このmx.controls.Imageのsource属性にURLをセットすることで画像として表示されます。ここまで全て合わせると下記のようになります。</p>
+<div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;mx:WindowedApplication</span> <span class="na">xmlns:mx=</span><span class="s">&quot;http://www.adobe.com/2006/mxml&quot;</span> <span class="na">layout=</span><span class="s">&quot;absolute&quot;</span> <span class="na">creationComplete=</span><span class="s">&quot;twitter_timeline.send()&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;mx:HTTPService</span>
+    <span class="na">id=</span><span class="s">&quot;twitter_timeline&quot;</span>
+    <span class="na">url=</span><span class="s">&quot;http://twitter.com/statuses/public_timeline.xml&quot;</span><span class="nt">/&gt;</span>
+
+  <span class="nt">&lt;mx:DataGrid</span> <span class="na">x=</span><span class="s">&quot;0&quot;</span> <span class="na">y=</span><span class="s">&quot;0&quot;</span> <span class="na">dataProvider=</span><span class="s">&quot;{twitter_timeline.lastResult.statuses.status}&quot;</span>  <span class="nt">&gt;</span>
+    <span class="nt">&lt;mx:columns&gt;</span>
+      <span class="nt">&lt;mx:DataGridColumn</span> <span class="na">headerText=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;mx:itemRenderer&gt;</span>
+          <span class="nt">&lt;mx:Component&gt;</span>
+            <span class="nt">&lt;mx:Image</span> <span class="na">source=</span><span class="s">&quot;{data.user.profile_image_url}&quot;</span><span class="nt">/&gt;</span>
+           <span class="nt">&lt;/mx:Component&gt;</span>
+        <span class="nt">&lt;/mx:itemRenderer&gt;</span>
+      <span class="nt">&lt;/mx:DataGridColumn&gt;</span>
+      <span class="nt">&lt;mx:DataGridColumn</span> <span class="na">headerText=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;mx:itemRenderer&gt;</span>
+          <span class="nt">&lt;mx:Component&gt;</span>
+            <span class="nt">&lt;mx:Label</span> <span class="na">text=</span><span class="s">&quot;{data.user.screen_name}&quot;</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;/mx:Component&gt;</span>
+        <span class="nt">&lt;/mx:itemRenderer&gt;</span>
+      <span class="nt">&lt;/mx:DataGridColumn&gt;</span>
+      <span class="nt">&lt;mx:DataGridColumn</span> <span class="na">headerText=</span><span class="s">&quot;text&quot;</span> <span class="na">dataField=</span><span class="s">&quot;text&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/mx:columns&gt;</span>
+  <span class="nt">&lt;/mx:DataGrid&gt;</span>
+
+<span class="nt">&lt;/mx:WindowedApplication&gt;</span>
+</pre></div>
+
+
+<p>これでAirアプリケーションを実行してみてください。タイムラインが表示されます。</p>
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="http://blog.dataich.com/category/misc">misc</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'capnwebb';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+
+<script>
+    var _gaq=[['_setAccount','UA-2954918-13'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+        <script src="http://blog.dataich.com/theme/js/main.js"></script>
+    </body>
+</html>

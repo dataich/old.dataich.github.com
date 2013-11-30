@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>    Homebrewで特定のプロダクトがアップグレードされないようにする
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="http://blog.dataich.com/theme/css/normalize.css">
+        <link href='//fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://blog.dataich.com/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://blog.dataich.com/theme/css/main.css">
+
+    <link rel="stylesheet" href="http://blog.dataich.com/theme/css/blog.css">
+    <link rel="stylesheet" href="http://blog.dataich.com/theme/css/github.css">
+        <link href="http://blog.dataich.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Cap'n webb Atom Feed" />
+        <script src="http://blog.dataich.com/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="wrapper">
+<header id="sidebar" class="side-shadow">
+    <hgroup id="site-header">
+        <a id="site-title" href="http://blog.dataich.com"><h1><i class="icon-coffee"></i> Cap'n webb</h1></a>
+        <p id="site-desc"></p>
+    </hgroup>
+    <nav>
+        <ul id="nav-links">
+                <li><a href="http://blog.dataich.com/contact">Contact</a></li>
+                <li><a href="http://blog.dataich.com/dicstory">Dicstory</a></li>
+                <li><a href="http://blog.dataich.com/LiveDiag">LiveDiag</a></li>
+        </ul>
+    </nav>
+<footer id="site-info">
+    <p>
+        Proudly powered by <a href="http://getpelican.com/">Pelican</a> and <a href="http://python.org/">Python</a>. Theme by<a href="https://github.com/hdra/pelican-cait">hndr</a>.
+    </p>
+    <p>
+        Textures by <a href="http://subtlepatterns.com/">Subtle Pattern</a>. Font Awesome by <a href="http://fortawesome.github.io/Font-Awesome/">Dave Grandy</a>.
+    </p>
+</footer></header>
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="2012-08-03T21:45:00" pubdate>
+                            2012/08/03
+                        </time>
+                        <a href="http://blog.dataich.com/2012/08/03/exclude-specific-product-no-upgrade" rel="bookmark"><h1>Homebrewで特定のプロダクトがアップグレードされないようにする</h1></a>
+                    </header>
+
+                    <section class="post-content">
+                        <p>brew update後、brew upgradeすると、バージョンアップ対象のものは全てアップグレードされます。<br />
+業務でgroonga+MySQLを使用しているのですが、groongaとMySQLのバージョンが合ってなかったりすると、多分壊れます。というかインストール時にそれでハマったので、間違ってアップグレードされてしまうと非常に困ります。他にもapacheを間違ってbrew upgrade後、brew cleanなどしてしまうとhttpd.conf消えちゃうなど。</p>
+<p>でどうするかというと、brew versionsでキープしたいバージョンのFormulaをチェックアウトしておけばいいです。</p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">brew</span> <span class="n">versions</span> <span class="n">groonga</span>
+<span class="mf">2.0.3</span>    <span class="n">git</span> <span class="n">checkout</span> <span class="mi">8330960</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Formula</span><span class="o">/</span><span class="n">groonga</span><span class="p">.</span><span class="n">rb</span> <span class="err">#</span> <span class="err">キープしときたいバージョン</span>
+<span class="mf">2.0.4</span>    <span class="n">git</span> <span class="n">checkout</span> <span class="mf">409e6</span><span class="n">a8</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Formula</span><span class="o">/</span><span class="n">groonga</span><span class="p">.</span><span class="n">rb</span>
+<span class="mf">2.0.2</span>    <span class="n">git</span> <span class="n">checkout</span> <span class="n">d622e37</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Formula</span><span class="o">/</span><span class="n">groonga</span><span class="p">.</span><span class="n">rb</span>
+<span class="err">…</span>
+<span class="err">…</span>
+
+<span class="err">$</span> <span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span>
+<span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="mi">8330960</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Formula</span><span class="o">/</span><span class="n">groonga</span><span class="p">.</span><span class="n">rb</span>
+
+<span class="err">$</span> <span class="n">brew</span> <span class="n">versions</span> <span class="n">mysql</span>
+<span class="mf">5.5.25</span><span class="n">a</span>  <span class="n">git</span> <span class="n">checkout</span> <span class="mf">2814e3</span><span class="n">a</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Formula</span><span class="o">/</span><span class="n">mysql</span><span class="p">.</span><span class="n">rb</span>
+<span class="mf">5.5.25</span>   <span class="n">git</span> <span class="n">checkout</span> <span class="mi">5</span><span class="n">bcd1f3</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Formula</span><span class="o">/</span><span class="n">mysql</span><span class="p">.</span><span class="n">rb</span>
+<span class="mf">5.5.24</span>   <span class="n">git</span> <span class="n">checkout</span> <span class="n">a977fbd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Formula</span><span class="o">/</span><span class="n">mysql</span><span class="p">.</span><span class="n">rb</span> <span class="err">#</span> <span class="err">キープしときたいバージョン</span>
+<span class="err">…</span>
+<span class="err">…</span>
+
+<span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">a977fbd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Formula</span><span class="o">/</span><span class="n">mysql</span><span class="p">.</span><span class="n">rb</span>
+</pre></div>
+
+
+<p>これで、brew updateしても、上記でcheckoutされたFormulaはキープされ続けるので、upgradeされることがなくなります。</p>
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="http://blog.dataich.com/category/misc">misc</a></p>
+                    </aside>
+                    <hr/>
+<div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'capnwebb';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+                </article>
+            </li>
+        </ol>
+    </div>
+        </div>
+
+<script>
+    var _gaq=[['_setAccount','UA-2954918-13'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+        <script src="http://blog.dataich.com/theme/js/main.js"></script>
+    </body>
+</html>
