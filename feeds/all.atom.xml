@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Cap'n webb</title><link href="http://blog.dataich.com/" rel="alternate"></link><link href="http://blog.dataich.com/feeds/all.atom.xml" rel="self"></link><id>http://blog.dataich.com/</id><updated>2013-08-21T22:30:00+09:00</updated><entry><title>LiveDiag 1.1.1 をリリースしました</title><link href="http://blog.dataich.com/2013/08/21/livediag-1-1-1-released" rel="alternate"></link><updated>2013-08-21T22:30:00+09:00</updated><author><name>dataich</name></author><id>tag:blog.dataich.com,2013-08-21:2013/08/21/livediag-1-1-1-released</id><summary type="html">&lt;p&gt;LiveDiag 1.1.1をリリースしました！&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Cap'n webb</title><link href="http://blog.dataich.com/" rel="alternate"></link><link href="http://blog.dataich.com/feeds/all.atom.xml" rel="self"></link><id>http://blog.dataich.com/</id><updated>2013-12-12T00:00:00+09:00</updated><entry><title>Dicstory 1.0.1 をリリースしました</title><link href="http://blog.dataich.com/2013/12/12/dicstory-1-0-1-released" rel="alternate"></link><updated>2013-12-12T00:00:00+09:00</updated><author><name>dataich</name></author><id>tag:blog.dataich.com,2013-12-12:2013/12/12/dicstory-1-0-1-released</id><summary type="html">&lt;p&gt;Dicstory 1.0.1をリリースしました！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="/dicstory"&gt;Dicstory&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;変更点&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Mac OS X 10.9でも動作するようになりました。  &lt;/li&gt;
+&lt;/ul&gt;</summary></entry><entry><title>LiveDiag 1.1.1 をリリースしました</title><link href="http://blog.dataich.com/2013/08/21/livediag-1-1-1-released" rel="alternate"></link><updated>2013-08-21T22:30:00+09:00</updated><author><name>dataich</name></author><id>tag:blog.dataich.com,2013-08-21:2013/08/21/livediag-1-1-1-released</id><summary type="html">&lt;p&gt;LiveDiag 1.1.1をリリースしました！&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a href="https://github.com/dataich/LiveDiag/releases/tag/1.1.1"&gt;1.1.1 released · dataich/LiveDiag&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
