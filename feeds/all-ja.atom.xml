@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Cap'n webb</title><link href="http://blog.dataich.com/" rel="alternate"></link><link href="http://blog.dataich.com/feeds/all-ja.atom.xml" rel="self"></link><id>http://blog.dataich.com/</id><updated>2014-02-23T11:20:00+09:00</updated><entry><title>「ぺちぱな。777 〜春は曙、2014年は3DCGも？〜」を開催しました</title><link href="http://blog.dataich.com/2014/02/23/phper-na-7th" rel="alternate"></link><updated>2014-02-23T11:20:00+09:00</updated><author><name>dataich</name></author><id>tag:blog.dataich.com,2014-02-23:2014/02/23/phper-na-7th</id><summary type="html">&lt;blockquote&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Cap'n webb</title><link href="http://blog.dataich.com/" rel="alternate"></link><link href="http://blog.dataich.com/feeds/all-ja.atom.xml" rel="self"></link><id>http://blog.dataich.com/</id><updated>2014-04-11T23:30:00+09:00</updated><entry><title>LiveDiag 1.2.0 をリリースしました</title><link href="http://blog.dataich.com/2014/04/11/livediag-1-2-0-released" rel="alternate"></link><updated>2014-04-11T23:30:00+09:00</updated><author><name>dataich</name></author><id>tag:blog.dataich.com,2014-04-11:2014/04/11/livediag-1-2-0-released</id><summary type="html">&lt;p&gt;LiveDiag 1.2.0をリリースしました！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="https://github.com/dataich/LiveDiag/releases/tag/1.2.0"&gt;1.2.0 released · dataich/LiveDiag&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;変更点&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;CSSを調整&lt;/li&gt;
+&lt;li&gt;ダイアグラム部分の出力をSVGにしました (次期リリースではimageまたsvgを選べるようにします)&lt;/li&gt;
+&lt;li&gt;SVGを外部ファイルに出力しました&lt;/li&gt;
+&lt;li&gt;保存周りを強化し、.md保存時にダイアグラム部分をMarkdown記法でのimageに変換し、他のMarkdownソフト等でも読み込めるようにしました&lt;/li&gt;
+&lt;li&gt;ウィンドウサイズの保存&lt;/li&gt;
+&lt;li&gt;フルスクリーンサポート&lt;/li&gt;
+&lt;/ul&gt;</summary></entry><entry><title>「ぺちぱな。777 〜春は曙、2014年は3DCGも？〜」を開催しました</title><link href="http://blog.dataich.com/2014/02/23/phper-na-7th" rel="alternate"></link><updated>2014-02-23T11:20:00+09:00</updated><author><name>dataich</name></author><id>tag:blog.dataich.com,2014-02-23:2014/02/23/phper-na-7th</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;a href="http://atnd.org/events/47765"&gt;ぺちぱな。777 〜春は曙、2014年は3DCGも？〜&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img alt="image" src="https://dl.dropboxusercontent.com/u/126064/blog.dataich.com.images/phper-na-7th-01.jpg" /&gt;&lt;/p&gt;
