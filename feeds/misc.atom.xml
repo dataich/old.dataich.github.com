@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Cap'n webb</title><link href="http://blog.dataich.com/" rel="alternate"></link><link href="http://blog.dataich.com/feeds/misc.atom.xml" rel="self"></link><id>http://blog.dataich.com/</id><updated>2014-04-11T23:30:00+09:00</updated><entry><title>LiveDiag 1.2.0 をリリースしました</title><link href="http://blog.dataich.com/2014/04/11/livediag-1-2-0-released" rel="alternate"></link><updated>2014-04-11T23:30:00+09:00</updated><author><name>dataich</name></author><id>tag:blog.dataich.com,2014-04-11:2014/04/11/livediag-1-2-0-released</id><summary type="html">&lt;p&gt;LiveDiag 1.2.0をリリースしました！&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Cap'n webb</title><link href="http://blog.dataich.com/" rel="alternate"></link><link href="http://blog.dataich.com/feeds/misc.atom.xml" rel="self"></link><id>http://blog.dataich.com/</id><updated>2014-07-19T11:20:00+09:00</updated><entry><title>「ぺちぱな。Q 〜たまには決められた通りに繰り返すのもいい〜」を開催しました</title><link href="http://blog.dataich.com/2014/07/19/phper-na-9th" rel="alternate"></link><updated>2014-07-19T11:20:00+09:00</updated><author><name>dataich</name></author><id>tag:blog.dataich.com,2014-07-19:2014/07/19/phper-na-9th</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="https://atnd.org/events/53496"&gt;ぺちぱな。Q 〜たまには決められた通りに繰り返すのもいい〜&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;今回は&lt;a href="https://twitter.com/eccyun"&gt;@eccyun&lt;/a&gt;氏によるenchant.jsを使ったゲームプログラミングのハンズオンを行いました。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="@tactactad氏によるいつもの開催宣言" src="https://dl.dropboxusercontent.com/u/126064/blog.dataich.com.images/phper-na-9th-01.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;資料の中で紹介もありましたが、無償でも使えるゲームのエンジンもたくさんあって、Cocos2dやらUnityやらありますが、enchant.jsはその名のとおりJavaScriptですので、環境構築もファイル置くだけですので、かなり取っ付き易い印象でした。&lt;/p&gt;
+&lt;p&gt;ありがたいことに15名以上の方に参加していただきましたが、ほとんどの方が最後まで完走していたもよう。
+私の出来上がりは&lt;a href="https://dl.dropboxusercontent.com/u/126064/blog.dataich.com.contents/q/index.html"&gt;こちら&lt;/a&gt;！&lt;/p&gt;
+&lt;p&gt;@eccyun、資料作成、講師とフル活躍ありがとう！&lt;/p&gt;
+&lt;h2&gt;余談&lt;/h2&gt;
+&lt;p&gt;お昼はいつものきしめん川瀬にて冷やし定食を頂きましたが、最高にうまかった！翌日も無性に食べたくなって、わざわざそれだけのために出掛けました。また行こうっと。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="きしめん川瀬の冷やしきしめん定食" src="https://dl.dropboxusercontent.com/u/126064/blog.dataich.com.images/phper-na-9th-02.jpg" /&gt;&lt;/p&gt;</summary></entry><entry><title>LiveDiag 1.2.0 をリリースしました</title><link href="http://blog.dataich.com/2014/04/11/livediag-1-2-0-released" rel="alternate"></link><updated>2014-04-11T23:30:00+09:00</updated><author><name>dataich</name></author><id>tag:blog.dataich.com,2014-04-11:2014/04/11/livediag-1-2-0-released</id><summary type="html">&lt;p&gt;LiveDiag 1.2.0をリリースしました！&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a href="https://github.com/dataich/LiveDiag/releases/tag/1.2.0"&gt;1.2.0 released · dataich/LiveDiag&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
