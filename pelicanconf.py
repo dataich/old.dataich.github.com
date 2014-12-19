@@ -27,11 +27,11 @@ PAGE_URL = '{slug}'
 PAGE_SAVE_AS = PAGE_URL + '/index.html'
 CATEGORY_URL = 'category/{slug}'
 CATEGORY_SAVE_AS = CATEGORY_URL + '/index.html'
-ARCHIVES_SAVE_AS = None
-AUTHOR_SAVE_AS = None
-AUTHORS_SAVE_AS = None
-CATEGORIES_SAVE_AS = None
-TAGS_SAVE_AS = None
+ARCHIVES_SAVE_AS = False
+AUTHOR_SAVE_AS = False
+AUTHORS_SAVE_AS = False
+CATEGORIES_SAVE_AS = False
+TAGS_SAVE_AS = False
 
 THEME = 'pelican-themes/pelican-cait'
 
