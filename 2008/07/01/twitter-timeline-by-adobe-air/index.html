@@ -53,7 +53,7 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2008-07-01T00:00:00" pubdate>
+                        <time class="post-time" datetime="2008-07-01T00:00:00+09:00" pubdate>
                             2008/07/01
                         </time>
                         <a href="http://blog.dataich.com/2008/07/01/twitter-timeline-by-adobe-air" rel="bookmark"><h1>Adobe Airでtwitterタイムラインを取得してみよう。</h1></a>
@@ -67,12 +67,12 @@
 <h4>Flex Builder（または、Eclipse）上でのプロジェクト作成</h4>
 <p>1.File &gt; New &gt; Flex Project（見つからない場合は、Otherより探してください。）を選択。</p>
 <p>2.プロジェクト名を'twitter'（任意）とし、アプリケーションの種類を'デスクトップアプリケーション（Adobe Air...）'としてFinishを選択。これで下記構成プロジェクトが作成されます。</p>
-<div class="highlight"><pre><span class="n">twitter</span>
-<span class="err">├──</span> <span class="n">bin</span><span class="o">-</span><span class="n">debug</span>
-<span class="err">├──</span> <span class="n">libs</span>
-<span class="err">└──</span> <span class="n">src</span>
-    <span class="err">├──</span> <span class="n">twitter</span><span class="o">-</span><span class="n">app</span><span class="p">.</span><span class="n">xml</span>
-    <span class="err">└──</span> <span class="n">twitter</span><span class="p">.</span><span class="n">xml</span>
+<div class="highlight"><pre>twitter
+├── bin-debug
+├── libs
+└── src
+    ├── twitter-app.xml
+    └── twitter.xml
 </pre></div>
 
 
@@ -91,9 +91,9 @@
 <h4>twitter apiを使用してタイムラインを取得する。</h4>
 <p>1.まずは、twitterのAPIと通信を行うための、mx:HTTPServiceを作成します。</p>
 <p>twitter.mxmlをダブルクリックし、エディターに表示させ、ソースタブをクリック。mx:WindowedApplicationタグ内に、下記を追加します。</p>
-<div class="highlight"><pre><span class="o">&lt;</span><span class="n">mx</span><span class="o">:</span><span class="n">HTTPService</span>
-  <span class="n">id</span><span class="o">=</span><span class="s">&quot;twitter_timeline&quot;</span>
-  <span class="n">url</span><span class="o">=</span><span class="s">&quot;http://twitter.com/statuses/public_timeline.xml&quot;</span><span class="o">/&gt;</span>
+<div class="highlight"><pre>&lt;mx:HTTPService
+  id=&quot;twitter_timeline&quot;
+  url=&quot;http://twitter.com/statuses/public_timeline.xml&quot;/&gt;
 </pre></div>
 
 

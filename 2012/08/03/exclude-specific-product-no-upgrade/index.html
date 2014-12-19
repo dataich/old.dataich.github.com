@@ -53,7 +53,7 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2012-08-03T21:45:00" pubdate>
+                        <time class="post-time" datetime="2012-08-03T21:45:00+09:00" pubdate>
                             2012/08/03
                         </time>
                         <a href="http://blog.dataich.com/2012/08/03/exclude-specific-product-no-upgrade" rel="bookmark"><h1>Homebrewで特定のプロダクトがアップグレードされないようにする</h1></a>
@@ -63,24 +63,24 @@
                         <p>brew update後、brew upgradeすると、バージョンアップ対象のものは全てアップグレードされます。<br />
 業務でgroonga+MySQLを使用しているのですが、groongaとMySQLのバージョンが合ってなかったりすると、多分壊れます。というかインストール時にそれでハマったので、間違ってアップグレードされてしまうと非常に困ります。他にもapacheを間違ってbrew upgrade後、brew cleanなどしてしまうとhttpd.conf消えちゃうなど。</p>
 <p>でどうするかというと、brew versionsでキープしたいバージョンのFormulaをチェックアウトしておけばいいです。</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">brew</span> <span class="n">versions</span> <span class="n">groonga</span>
-<span class="mf">2.0.3</span>    <span class="n">git</span> <span class="n">checkout</span> <span class="mi">8330960</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Formula</span><span class="o">/</span><span class="n">groonga</span><span class="p">.</span><span class="n">rb</span> <span class="err">#</span> <span class="err">キープしときたいバージョン</span>
-<span class="mf">2.0.4</span>    <span class="n">git</span> <span class="n">checkout</span> <span class="mf">409e6</span><span class="n">a8</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Formula</span><span class="o">/</span><span class="n">groonga</span><span class="p">.</span><span class="n">rb</span>
-<span class="mf">2.0.2</span>    <span class="n">git</span> <span class="n">checkout</span> <span class="n">d622e37</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Formula</span><span class="o">/</span><span class="n">groonga</span><span class="p">.</span><span class="n">rb</span>
-<span class="err">…</span>
-<span class="err">…</span>
+<div class="highlight"><pre><span class="nv">$ </span>brew versions groonga
+2.0.3    git checkout <span class="m">8330960</span> /usr/local/Library/Formula/groonga.rb <span class="c"># キープしときたいバージョン</span>
+2.0.4    git checkout 409e6a8 /usr/local/Library/Formula/groonga.rb
+2.0.2    git checkout d622e37 /usr/local/Library/Formula/groonga.rb
+…
+…
 
-<span class="err">$</span> <span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span>
-<span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="mi">8330960</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Formula</span><span class="o">/</span><span class="n">groonga</span><span class="p">.</span><span class="n">rb</span>
+<span class="nv">$ </span><span class="nb">cd</span> /usr/local
+<span class="nv">$ </span>git checkout <span class="m">8330960</span> /usr/local/Library/Formula/groonga.rb
 
-<span class="err">$</span> <span class="n">brew</span> <span class="n">versions</span> <span class="n">mysql</span>
-<span class="mf">5.5.25</span><span class="n">a</span>  <span class="n">git</span> <span class="n">checkout</span> <span class="mf">2814e3</span><span class="n">a</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Formula</span><span class="o">/</span><span class="n">mysql</span><span class="p">.</span><span class="n">rb</span>
-<span class="mf">5.5.25</span>   <span class="n">git</span> <span class="n">checkout</span> <span class="mi">5</span><span class="n">bcd1f3</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Formula</span><span class="o">/</span><span class="n">mysql</span><span class="p">.</span><span class="n">rb</span>
-<span class="mf">5.5.24</span>   <span class="n">git</span> <span class="n">checkout</span> <span class="n">a977fbd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Formula</span><span class="o">/</span><span class="n">mysql</span><span class="p">.</span><span class="n">rb</span> <span class="err">#</span> <span class="err">キープしときたいバージョン</span>
-<span class="err">…</span>
-<span class="err">…</span>
+<span class="nv">$ </span>brew versions mysql
+5.5.25a  git checkout 2814e3a /usr/local/Library/Formula/mysql.rb
+5.5.25   git checkout 5bcd1f3 /usr/local/Library/Formula/mysql.rb
+5.5.24   git checkout a977fbd /usr/local/Library/Formula/mysql.rb <span class="c"># キープしときたいバージョン</span>
+…
+…
 
-<span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">a977fbd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Formula</span><span class="o">/</span><span class="n">mysql</span><span class="p">.</span><span class="n">rb</span>
+<span class="nv">$ </span>git checkout a977fbd /usr/local/Library/Formula/mysql.rb
 </pre></div>
 
 

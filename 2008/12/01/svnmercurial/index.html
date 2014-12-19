@@ -53,7 +53,7 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2008-12-01T00:00:00" pubdate>
+                        <time class="post-time" datetime="2008-12-01T00:00:00+09:00" pubdate>
                             2008/12/01
                         </time>
                         <a href="http://blog.dataich.com/2008/12/01/svnmercurial" rel="bookmark"><h1>svn+mercurial</h1></a>
@@ -65,30 +65,30 @@
 </blockquote>
 <p>既存のsvnリポジトリがあって、ローカルでもコミットしたかったので。</p>
 <p>Leopardで使うためには、こうやる。</p>
-<div class="highlight"><pre><span class="cp">#必要なパッケージのインストール</span>
-<span class="err">$</span> <span class="n">sudo</span> <span class="n">port</span> <span class="n">install</span> <span class="n">subversion</span>
-<span class="err">$</span> <span class="n">sudo</span> <span class="n">port</span> <span class="n">install</span> <span class="n">mercurial</span>
-<span class="err">$</span> <span class="n">sudo</span> <span class="n">port</span> <span class="n">install</span> <span class="n">py</span><span class="o">-</span><span class="n">svn</span>
+<div class="highlight"><pre>#必要なパッケージのインストール
+$ sudo port install subversion
+$ sudo port install mercurial
+$ sudo port install py-svn
 
-<span class="cp">#hgsvnソースを取得</span>
-<span class="err">$</span> <span class="n">hg</span> <span class="n">clone</span> <span class="n">http</span><span class="o">:</span><span class="c1">//hg.pitrou.net/public/hgsvn/main hgsvn</span>
+#hgsvnソースを取得
+$ hg clone http://hg.pitrou.net/public/hgsvn/main hgsvn
 
-<span class="cp">#hgsvnインストール</span>
-<span class="err">$</span> <span class="n">sudo</span> <span class="n">easy_install</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span> <span class="n">hgsvn</span>
+#hgsvnインストール
+$ sudo easy_install -s /opt/local/bin hgsvn
 
-<span class="cp">#既存のsvnリポジトリからソースを取得</span>
-<span class="err">$</span> <span class="n">hgimportsvn</span> <span class="n">http</span><span class="o">:</span><span class="c1">//localhost/svnrepos</span>
-<span class="err">$</span> <span class="n">cd</span> <span class="n">svnrepos</span>
-<span class="err">$</span> <span class="n">hgpullsvn</span>
+#既存のsvnリポジトリからソースを取得
+$ hgimportsvn http://localhost/svnrepos
+$ cd svnrepos
+$ hgpullsvn
 
-<span class="cp">#hgローカルリポジトリへのコミット</span>
-<span class="err">$</span> <span class="n">hg</span> <span class="n">commit</span>
+#hgローカルリポジトリへのコミット
+$ hg commit
 
-<span class="cp">#svnリポジトリから更新</span>
-<span class="err">$</span> <span class="n">hgpullsvn</span>
+#svnリポジトリから更新
+$ hgpullsvn
 
-<span class="cp">#svnリポジトリへコミット</span>
-<span class="err">$</span> <span class="n">hgpushsvn</span>
+#svnリポジトリへコミット
+$ hgpushsvn
 </pre></div>
 
 
@@ -96,8 +96,8 @@
 py-svnがそのままだとpython2.4のsite-packagesにインストールされるようで、
 py-svnが見つからないとか言われます。
 解決するのが面倒そうだったので下記のようにしてpython2.4に切り替えてます。</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">sudo</span> <span class="n">port</span> <span class="n">install</span> <span class="n">python_select</span>
-<span class="err">$</span> <span class="n">sudo</span> <span class="n">python_select</span> <span class="n">python24</span>
+<div class="highlight"><pre><span class="nv">$ </span>sudo port install python_select
+<span class="nv">$ </span>sudo python_select python24
 </pre></div>
                     </section>
                     <hr/>

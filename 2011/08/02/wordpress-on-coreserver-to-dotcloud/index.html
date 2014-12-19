@@ -53,7 +53,7 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2011-08-02T00:00:00" pubdate>
+                        <time class="post-time" datetime="2011-08-02T00:00:00+09:00" pubdate>
                             2011/08/02
                         </time>
                         <a href="http://blog.dataich.com/2011/08/02/wordpress-on-coreserver-to-dotcloud" rel="bookmark"><h1>CORESERVERからdotCloudにWordpressをお引っ越し</h1></a>
@@ -69,64 +69,64 @@
 <p>ここからがdotCloudに対して行う作業です。
 ここではアプリケーション名をwordpressとしています。</p>
 <p>dotCloudにアプリケーションを作成します。</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">dotcloud</span> <span class="n">create</span> <span class="n">wordpress</span>
-<span class="n">Created</span> <span class="n">application</span> <span class="s">&quot;wordpress&quot;</span>
+<div class="highlight"><pre><span class="nv">$ </span>dotcloud create wordpress
+Created application <span class="s2">&quot;wordpress&quot;</span>
 </pre></div>
 
 
 <p>ローカルにディレクトリを作成します。</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">mkdir</span> <span class="n">blog</span><span class="p">.</span><span class="n">dataich</span><span class="p">.</span><span class="n">com</span>
+<div class="highlight"><pre><span class="nv">$ </span>mkdir blog.dataich.com
 </pre></div>
 
 
 <p>ここにサービスの設定や、ソースコード等を置いていきます。</p>
 <p>Wordpressに必要なサービスPHP、MySQLの設定を行います。dotcloud.ymlに記述します。</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">vi</span> <span class="n">blog</span><span class="p">.</span><span class="n">dataich</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">dotcloud</span><span class="p">.</span><span class="n">yml</span>
+<div class="highlight"><pre><span class="nv">$ </span>vi blog.dataich.com/dotcloud.yml
 </pre></div>
 
 
 <script src="https://gist.github.com/1119565.js?file=dotcloud.yml"></script>
 
 <p>まずはこの状態で動きを確認してみます。 dotcloud pushコマンドでアプリケーションのソースコード（とはいってもこの段階ではdotcloud.ymlのみ）をPushします。 </p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">dotcloud</span> <span class="n">push</span> <span class="n">wordpress</span> <span class="n">blog</span><span class="p">.</span><span class="n">dataich</span><span class="p">.</span><span class="n">com</span>
-<span class="cp"># upload blog.dataich.com ssh:</span><span class="c1">//dotcloud@uploader.dotcloud.com:21122/wordpress</span>
-<span class="cp"># rsync</span>
-<span class="n">Pseudo</span><span class="o">-</span><span class="n">terminal</span> <span class="n">will</span> <span class="n">not</span> <span class="n">be</span> <span class="n">allocated</span> <span class="n">because</span> <span class="n">stdin</span> <span class="n">is</span> <span class="n">not</span> <span class="n">a</span> <span class="n">terminal</span><span class="p">.</span>
-<span class="nl">Warning:</span> <span class="n">Permanently</span> <span class="n">added</span> <span class="err">&#39;</span><span class="p">[</span><span class="n">uploader</span><span class="p">.</span><span class="n">dotcloud</span><span class="p">.</span><span class="n">com</span><span class="p">]</span><span class="o">:</span><span class="mi">21122</span><span class="p">,[</span><span class="mf">184.73.14.49</span><span class="p">]</span><span class="o">:</span><span class="mi">21122</span><span class="err">&#39;</span> <span class="p">(</span><span class="n">RSA</span><span class="p">)</span> <span class="n">to</span> <span class="n">the</span> <span class="n">list</span> <span class="n">of</span> <span class="n">known</span> <span class="n">hosts</span><span class="p">.</span>
-<span class="n">building</span> <span class="n">file</span> <span class="n">list</span> <span class="p">...</span> <span class="n">done</span>
-<span class="p">.</span><span class="o">/</span>
-<span class="n">dotcloud</span><span class="p">.</span><span class="n">yml</span>
+<div class="highlight"><pre><span class="nv">$ </span>dotcloud push wordpress blog.dataich.com
+<span class="c"># upload blog.dataich.com ssh://dotcloud@uploader.dotcloud.com:21122/wordpress</span>
+<span class="c"># rsync</span>
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Warning: Permanently added <span class="s1">&#39;[uploader.dotcloud.com]:21122,[184.73.14.49]:21122&#39;</span> <span class="o">(</span>RSA<span class="o">)</span> to the list of known hosts.
+building file list ... <span class="k">done</span>
+./
+dotcloud.yml
 
-<span class="n">sent</span> <span class="mi">188</span> <span class="n">bytes</span>  <span class="n">received</span> <span class="mi">54</span> <span class="n">bytes</span>  <span class="mf">9.88</span> <span class="n">bytes</span><span class="o">/</span><span class="n">sec</span>
-<span class="n">total</span> <span class="n">size</span> <span class="n">is</span> <span class="mi">52</span>  <span class="n">speedup</span> <span class="n">is</span> <span class="mf">0.21</span>
-<span class="n">Deployment</span> <span class="k">for</span> <span class="s">&quot;wordpress&quot;</span> <span class="n">triggered</span><span class="p">.</span> <span class="n">Will</span> <span class="n">be</span> <span class="n">available</span> <span class="n">in</span> <span class="n">a</span> <span class="n">few</span> <span class="n">seconds</span><span class="p">.</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">04</span><span class="o">:</span><span class="mi">54</span> <span class="p">[</span><span class="n">api</span><span class="p">]</span> <span class="n">Waiting</span> <span class="k">for</span> <span class="n">the</span> <span class="n">build</span><span class="p">.</span> <span class="p">(</span><span class="n">It</span> <span class="n">may</span> <span class="n">take</span> <span class="n">a</span> <span class="n">few</span> <span class="n">minutes</span><span class="p">)</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">04</span><span class="o">:</span><span class="mi">54</span> <span class="p">[</span><span class="n">www</span><span class="mf">.0</span><span class="p">]</span> <span class="n">Deploying</span><span class="p">...</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">04</span><span class="o">:</span><span class="mi">54</span> <span class="p">[</span><span class="n">data</span><span class="mf">.0</span><span class="p">]</span> <span class="n">Deploying</span><span class="p">...</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">05</span><span class="o">:</span><span class="mi">25</span> <span class="p">[</span><span class="n">www</span><span class="mf">.0</span><span class="p">]</span> <span class="n">Service</span> <span class="n">booted</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">05</span><span class="o">:</span><span class="mi">35</span> <span class="p">[</span><span class="n">data</span><span class="mf">.0</span><span class="p">]</span> <span class="n">Service</span> <span class="n">booted</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">05</span><span class="o">:</span><span class="mi">35</span> <span class="p">[</span><span class="n">api</span><span class="p">]</span> <span class="n">All</span> <span class="n">the</span> <span class="n">services</span> <span class="n">are</span> <span class="n">ready</span><span class="p">.</span> <span class="n">Beginning</span> <span class="n">the</span> <span class="n">build</span><span class="p">.</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">05</span><span class="o">:</span><span class="mi">36</span> <span class="p">[</span><span class="n">data</span><span class="mf">.0</span><span class="p">]</span> <span class="n">The</span> <span class="n">build</span> <span class="n">started</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">05</span><span class="o">:</span><span class="mi">36</span> <span class="p">[</span><span class="n">data</span><span class="mf">.0</span><span class="p">]</span> <span class="n">This</span> <span class="n">service</span> <span class="n">type</span> <span class="n">does</span> <span class="n">not</span> <span class="n">support</span> <span class="n">build</span> <span class="n">method</span><span class="p">,</span> <span class="n">ignoring</span><span class="p">...</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">05</span><span class="o">:</span><span class="mi">36</span> <span class="p">[</span><span class="n">data</span><span class="mf">.0</span><span class="p">]</span> <span class="n">The</span> <span class="n">build</span> <span class="n">finished</span> <span class="n">successfully</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">05</span><span class="o">:</span><span class="mi">36</span> <span class="p">[</span><span class="n">www</span><span class="mf">.0</span><span class="p">]</span> <span class="n">The</span> <span class="n">build</span> <span class="n">started</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">05</span><span class="o">:</span><span class="mi">36</span> <span class="p">[</span><span class="n">www</span><span class="mf">.0</span><span class="p">]</span> <span class="n">Fetched</span> <span class="n">code</span> <span class="n">revision</span> <span class="n">rsync</span><span class="o">-</span><span class="mf">1312214692.31</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">05</span><span class="o">:</span><span class="mi">37</span> <span class="p">[</span><span class="n">www</span><span class="mf">.0</span><span class="p">]</span> <span class="n">Updating</span> <span class="n">channel</span> <span class="s">&quot;doc.php.net&quot;</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">05</span><span class="o">:</span><span class="mi">37</span> <span class="p">[</span><span class="n">www</span><span class="mf">.0</span><span class="p">]</span> <span class="n">Update</span> <span class="n">of</span> <span class="n">Channel</span> <span class="s">&quot;doc.php.net&quot;</span> <span class="n">succeeded</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">05</span><span class="o">:</span><span class="mi">37</span> <span class="p">[</span><span class="n">www</span><span class="mf">.0</span><span class="p">]</span> <span class="n">Updating</span> <span class="n">channel</span> <span class="s">&quot;pear.php.net&quot;</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">05</span><span class="o">:</span><span class="mi">38</span> <span class="p">[</span><span class="n">www</span><span class="mf">.0</span><span class="p">]</span> <span class="n">Channel</span> <span class="s">&quot;pear.php.net&quot;</span> <span class="n">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">05</span><span class="o">:</span><span class="mi">38</span> <span class="p">[</span><span class="n">www</span><span class="mf">.0</span><span class="p">]</span> <span class="n">Updating</span> <span class="n">channel</span> <span class="s">&quot;pecl.php.net&quot;</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">05</span><span class="o">:</span><span class="mi">38</span> <span class="p">[</span><span class="n">www</span><span class="mf">.0</span><span class="p">]</span> <span class="n">Update</span> <span class="n">of</span> <span class="n">Channel</span> <span class="s">&quot;pecl.php.net&quot;</span> <span class="n">succeeded</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">05</span><span class="o">:</span><span class="mi">38</span> <span class="p">[</span><span class="n">www</span><span class="mf">.0</span><span class="p">]</span> <span class="o">-</span><span class="n">su</span><span class="o">:</span> <span class="n">line</span> <span class="mi">0</span><span class="o">:</span> <span class="n">cd</span><span class="o">:</span> <span class="n">current</span><span class="o">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="n">or</span> <span class="n">directory</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">05</span><span class="o">:</span><span class="mi">39</span> <span class="p">[</span><span class="n">www</span><span class="mf">.0</span><span class="p">]</span> <span class="o">-</span><span class="n">su</span><span class="o">:</span> <span class="n">line</span> <span class="mi">0</span><span class="o">:</span> <span class="n">cd</span><span class="o">:</span> <span class="n">current</span><span class="o">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="n">or</span> <span class="n">directory</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">05</span><span class="o">:</span><span class="mi">39</span> <span class="p">[</span><span class="n">www</span><span class="mf">.0</span><span class="p">]</span> <span class="n">Reloading</span> <span class="n">nginx</span> <span class="n">configuration</span><span class="o">:</span> <span class="n">nginx</span><span class="p">.</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">05</span><span class="o">:</span><span class="mi">42</span> <span class="p">[</span><span class="n">www</span><span class="mf">.0</span><span class="p">]</span> <span class="n">php5</span><span class="o">-</span><span class="n">fpm</span><span class="o">:</span> <span class="n">stopped</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">05</span><span class="o">:</span><span class="mi">42</span> <span class="p">[</span><span class="n">www</span><span class="mf">.0</span><span class="p">]</span> <span class="n">php5</span><span class="o">-</span><span class="n">fpm</span><span class="o">:</span> <span class="n">ERROR</span> <span class="p">(</span><span class="n">abnormal</span> <span class="n">termination</span><span class="p">)</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">05</span><span class="o">:</span><span class="mi">42</span> <span class="p">[</span><span class="n">www</span><span class="mf">.0</span><span class="p">]</span> <span class="n">The</span> <span class="n">build</span> <span class="n">finished</span> <span class="n">successfully</span>
-<span class="mi">2011</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">01</span> <span class="mi">23</span><span class="o">:</span><span class="mo">05</span><span class="o">:</span><span class="mi">42</span> <span class="p">[</span><span class="n">api</span><span class="p">]</span> <span class="n">Deploy</span> <span class="n">finished</span>
+sent <span class="m">188</span> bytes  received <span class="m">54</span> bytes  9.88 bytes/sec
+total size is <span class="m">52</span>  speedup is 0.21
+Deployment <span class="k">for</span> <span class="s2">&quot;wordpress&quot;</span> triggered. Will be available in a few seconds.
+2011-08-01 23:04:54 <span class="o">[</span>api<span class="o">]</span> Waiting <span class="k">for</span> the build. <span class="o">(</span>It may take a few minutes<span class="o">)</span>
+2011-08-01 23:04:54 <span class="o">[</span>www.0<span class="o">]</span> Deploying...
+2011-08-01 23:04:54 <span class="o">[</span>data.0<span class="o">]</span> Deploying...
+2011-08-01 23:05:25 <span class="o">[</span>www.0<span class="o">]</span> Service booted
+2011-08-01 23:05:35 <span class="o">[</span>data.0<span class="o">]</span> Service booted
+2011-08-01 23:05:35 <span class="o">[</span>api<span class="o">]</span> All the services are ready. Beginning the build.
+2011-08-01 23:05:36 <span class="o">[</span>data.0<span class="o">]</span> The build started
+2011-08-01 23:05:36 <span class="o">[</span>data.0<span class="o">]</span> This service <span class="nb">type </span>does not support build method, ignoring...
+2011-08-01 23:05:36 <span class="o">[</span>data.0<span class="o">]</span> The build finished successfully
+2011-08-01 23:05:36 <span class="o">[</span>www.0<span class="o">]</span> The build started
+2011-08-01 23:05:36 <span class="o">[</span>www.0<span class="o">]</span> Fetched code revision rsync-1312214692.31
+2011-08-01 23:05:37 <span class="o">[</span>www.0<span class="o">]</span> Updating channel <span class="s2">&quot;doc.php.net&quot;</span>
+2011-08-01 23:05:37 <span class="o">[</span>www.0<span class="o">]</span> Update of Channel <span class="s2">&quot;doc.php.net&quot;</span> succeeded
+2011-08-01 23:05:37 <span class="o">[</span>www.0<span class="o">]</span> Updating channel <span class="s2">&quot;pear.php.net&quot;</span>
+2011-08-01 23:05:38 <span class="o">[</span>www.0<span class="o">]</span> Channel <span class="s2">&quot;pear.php.net&quot;</span> is up to date
+2011-08-01 23:05:38 <span class="o">[</span>www.0<span class="o">]</span> Updating channel <span class="s2">&quot;pecl.php.net&quot;</span>
+2011-08-01 23:05:38 <span class="o">[</span>www.0<span class="o">]</span> Update of Channel <span class="s2">&quot;pecl.php.net&quot;</span> succeeded
+2011-08-01 23:05:38 <span class="o">[</span>www.0<span class="o">]</span> -su: line 0: <span class="nb">cd</span>: current: No such file or directory
+2011-08-01 23:05:39 <span class="o">[</span>www.0<span class="o">]</span> -su: line 0: <span class="nb">cd</span>: current: No such file or directory
+2011-08-01 23:05:39 <span class="o">[</span>www.0<span class="o">]</span> Reloading nginx configuration: nginx.
+2011-08-01 23:05:42 <span class="o">[</span>www.0<span class="o">]</span> php5-fpm: stopped
+2011-08-01 23:05:42 <span class="o">[</span>www.0<span class="o">]</span> php5-fpm: ERROR <span class="o">(</span>abnormal termination<span class="o">)</span>
+2011-08-01 23:05:42 <span class="o">[</span>www.0<span class="o">]</span> The build finished successfully
+2011-08-01 23:05:42 <span class="o">[</span>api<span class="o">]</span> Deploy finished
 
-<span class="n">Deployment</span> <span class="n">finished</span><span class="p">.</span> <span class="n">Your</span> <span class="n">application</span> <span class="n">is</span> <span class="n">available</span> <span class="n">at</span> <span class="n">the</span> <span class="n">following</span> <span class="n">URLs</span>
-<span class="nl">www:</span> <span class="n">http</span><span class="o">:</span><span class="c1">//xxxxxxxx.dotcloud.com/</span>
+Deployment finished. Your application is available at the following URLs
+www: http://xxxxxxxx.dotcloud.com/
 </pre></div>
 
 
@@ -134,61 +134,61 @@
 <h3>データの移行</h3>
 <p>CORESERVERからとったデータベースダンプをdotCloud上のMySQLにロードします。そのためにdotCloudにデータベース、ユーザの作成をしておきます。</p>
 <p>まずは、dotcloud infoでMySQLサービスの情報を取得します。ここでは書きませんが、rootパスワードその他情報が表示されるはずです。</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">dotcloud</span> <span class="n">info</span> <span class="n">wordpress</span><span class="p">.</span><span class="n">data</span>
+<div class="highlight"><pre><span class="nv">$ </span>dotcloud info wordpress.data
 </pre></div>
 
 
 <p>次のコマンドでMySQLのシェルにログインします。 </p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">dotcloud</span> <span class="n">run</span> <span class="n">wordpress</span><span class="p">.</span><span class="n">data</span> <span class="o">--</span> <span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span>
-<span class="cp"># mysql -u root -p</span>
-<span class="nl">Warning:</span> <span class="n">Permanently</span> <span class="n">added</span> <span class="err">&#39;</span><span class="p">[</span><span class="n">xxxxxxxx</span><span class="p">.</span><span class="n">dotcloud</span><span class="p">.</span><span class="n">com</span><span class="p">]</span><span class="o">:</span><span class="mi">12428</span><span class="p">,[</span><span class="mf">174.129.17.131</span><span class="p">]</span><span class="o">:</span><span class="mi">12428</span><span class="err">&#39;</span> <span class="p">(</span><span class="n">RSA</span><span class="p">)</span> <span class="n">to</span> <span class="n">the</span> <span class="n">list</span> <span class="n">of</span> <span class="n">known</span> <span class="n">hosts</span><span class="p">.</span>
-<span class="n">Enter</span> <span class="n">password</span><span class="o">:</span>
-<span class="n">Welcome</span> <span class="n">to</span> <span class="n">the</span> <span class="n">MySQL</span> <span class="n">monitor</span><span class="p">.</span>  <span class="n">Commands</span> <span class="n">end</span> <span class="n">with</span> <span class="p">;</span> <span class="n">or</span> <span class="err">\</span><span class="n">g</span><span class="p">.</span>
-<span class="n">Your</span> <span class="n">MySQL</span> <span class="n">connection</span> <span class="n">id</span> <span class="n">is</span> <span class="mi">34</span>
-<span class="n">Server</span> <span class="n">version</span><span class="o">:</span> <span class="mf">5.1.41</span><span class="o">-</span><span class="mi">3u</span><span class="n">buntu12</span><span class="mf">.10</span><span class="o">-</span><span class="n">log</span> <span class="p">(</span><span class="n">Ubuntu</span><span class="p">)</span>
+<div class="highlight"><pre><span class="nv">$ </span>dotcloud run wordpress.data -- mysql -u root -p
+<span class="c"># mysql -u root -p</span>
+Warning: Permanently added <span class="s1">&#39;[xxxxxxxx.dotcloud.com]:12428,[174.129.17.131]:12428&#39;</span> <span class="o">(</span>RSA<span class="o">)</span> to the list of known hosts.
+Enter password:
+Welcome to the MySQL monitor.  Commands end with <span class="p">;</span> or <span class="se">\g</span>.
+Your MySQL connection id is 34
+Server version: 5.1.41-3ubuntu12.10-log <span class="o">(</span>Ubuntu<span class="o">)</span>
 
-<span class="n">Type</span> <span class="err">&#39;</span><span class="n">help</span><span class="p">;</span><span class="err">&#39;</span> <span class="n">or</span> <span class="sc">&#39;\h&#39;</span> <span class="k">for</span> <span class="n">help</span><span class="p">.</span> <span class="n">Type</span> <span class="sc">&#39;\c&#39;</span> <span class="n">to</span> <span class="n">clear</span> <span class="n">the</span> <span class="n">current</span> <span class="n">input</span> <span class="n">statement</span><span class="p">.</span>
+Type <span class="s1">&#39;help;&#39;</span> or <span class="s1">&#39;\h&#39;</span> <span class="k">for</span> help. Type <span class="s1">&#39;\c&#39;</span> to clear the current input statement.
 
-<span class="n">mysql</span><span class="o">&gt;</span>
+mysql&gt;
 </pre></div>
 
 
 <p>DBを作成します。</p>
-<div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">CREATE</span> <span class="n">DATABASE</span> <span class="n">wordpress</span><span class="p">;</span>
-<span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">1</span> <span class="n">row</span> <span class="n">affected</span> <span class="p">(</span><span class="mf">0.00</span> <span class="n">sec</span><span class="p">)</span>
+<div class="highlight"><pre>mysql&gt; CREATE DATABASE wordpress;
+Query OK, 1 row affected (0.00 sec)
 </pre></div>
 
 
 <p>ユーザを作成し、権限を与えます。 </p>
-<div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">GRANT</span> <span class="n">ALL</span> <span class="n">ON</span> <span class="n">wordpress</span><span class="p">.</span><span class="o">*</span> <span class="n">TO</span> <span class="err">&#39;</span><span class="n">dataich</span><span class="sc">&#39;@&#39;</span><span class="o">%</span><span class="err">&#39;</span> <span class="n">IDENTIFIED</span> <span class="n">BY</span> <span class="err">&#39;</span><span class="n">XXXXXXXXXX</span><span class="err">&#39;</span><span class="p">;</span>
-<span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="n">rows</span> <span class="n">affected</span> <span class="p">(</span><span class="mf">0.00</span> <span class="n">sec</span><span class="p">)</span>
+<div class="highlight"><pre>mysql&gt; GRANT ALL ON wordpress.* TO &#39;dataich&#39;@&#39;%&#39; IDENTIFIED BY &#39;XXXXXXXXXX&#39;;
+Query OK, 0 rows affected (0.00 sec)
 </pre></div>
 
 
 <p>念のため </p>
-<div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">FLUSH</span> <span class="n">PRIVILEGES</span><span class="p">;</span>
-<span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="n">rows</span> <span class="n">affected</span> <span class="p">(</span><span class="mf">0.00</span> <span class="n">sec</span><span class="p">)</span>
+<div class="highlight"><pre>mysql&gt; FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.00 sec)
 </pre></div>
 
 
 <p>では、データをロードします。 データをアップし </p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">dotcloud</span> <span class="n">run</span> <span class="n">wordpress</span><span class="p">.</span><span class="n">data</span> <span class="s">&quot;cat &gt; data.sql&quot;</span> <span class="o">&lt;</span> <span class="o">~/</span><span class="n">Desktop</span><span class="o">/</span><span class="n">mysql_wp</span><span class="p">.</span><span class="n">dump</span>
-<span class="cp"># cat &gt; data.sql</span>
-<span class="n">Pseudo</span><span class="o">-</span><span class="n">terminal</span> <span class="n">will</span> <span class="n">not</span> <span class="n">be</span> <span class="n">allocated</span> <span class="n">because</span> <span class="n">stdin</span> <span class="n">is</span> <span class="n">not</span> <span class="n">a</span> <span class="n">terminal</span><span class="p">.</span>
-<span class="nl">Warning:</span> <span class="n">Permanently</span> <span class="n">added</span> <span class="err">&#39;</span><span class="p">[</span><span class="n">xxxxxxxx</span><span class="p">.</span><span class="n">dotcloud</span><span class="p">.</span><span class="n">com</span><span class="p">]</span><span class="o">:</span><span class="mi">12428</span><span class="p">,[</span><span class="mf">174.129.17.131</span><span class="p">]</span><span class="o">:</span><span class="mi">12428</span><span class="err">&#39;</span> <span class="p">(</span><span class="n">RSA</span><span class="p">)</span> <span class="n">to</span> <span class="n">the</span> <span class="n">list</span> <span class="n">of</span> <span class="n">known</span> <span class="n">hosts</span><span class="p">.</span>
+<div class="highlight"><pre><span class="nv">$ </span>dotcloud run wordpress.data <span class="s2">&quot;cat &gt; data.sql&quot;</span> &lt; ~/Desktop/mysql_wp.dump
+<span class="c"># cat &gt; data.sql</span>
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Warning: Permanently added <span class="s1">&#39;[xxxxxxxx.dotcloud.com]:12428,[174.129.17.131]:12428&#39;</span> <span class="o">(</span>RSA<span class="o">)</span> to the list of known hosts.
 </pre></div>
 
 
 <p>SSHログインし </p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">dotcloud</span> <span class="n">ssh</span> <span class="n">wordpress</span><span class="p">.</span><span class="n">data</span>
-<span class="cp"># $SHELL</span>
-<span class="nl">Warning:</span> <span class="n">Permanently</span> <span class="n">added</span> <span class="err">&#39;</span><span class="p">[</span><span class="n">xxxxxxxx</span><span class="p">.</span><span class="n">dotcloud</span><span class="p">.</span><span class="n">com</span><span class="p">]</span><span class="o">:</span><span class="mi">12428</span><span class="p">,[</span><span class="mf">174.129.17.131</span><span class="p">]</span><span class="o">:</span><span class="mi">12428</span><span class="err">&#39;</span> <span class="p">(</span><span class="n">RSA</span><span class="p">)</span> <span class="n">to</span> <span class="n">the</span> <span class="n">list</span> <span class="n">of</span> <span class="n">known</span> <span class="n">hosts</span><span class="p">.</span>
-<span class="n">mysql</span><span class="err">@</span><span class="n">wordpress</span><span class="o">-</span><span class="k">default</span><span class="o">-</span><span class="n">data</span><span class="o">-</span><span class="mi">0</span><span class="o">:~</span><span class="err">$</span>
+<div class="highlight"><pre><span class="nv">$ </span>dotcloud ssh wordpress.data
+<span class="c"># $SHELL</span>
+Warning: Permanently added <span class="s1">&#39;[xxxxxxxx.dotcloud.com]:12428,[174.129.17.131]:12428&#39;</span> <span class="o">(</span>RSA<span class="o">)</span> to the list of known hosts.
+mysql@wordpress-default-data-0:~<span class="err">$</span>
 </pre></div>
 
 
 <p>ロードします。 </p>
-<div class="highlight"><pre><span class="n">mysql</span><span class="err">@</span><span class="n">wordpress</span><span class="o">-</span><span class="k">default</span><span class="o">-</span><span class="n">data</span><span class="o">-</span><span class="mi">0</span><span class="o">:~</span><span class="err">$</span> <span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="n">dataich</span> <span class="o">-</span><span class="n">p</span> <span class="n">wordpress</span> <span class="o">&lt;</span> <span class="n">data</span><span class="p">.</span><span class="n">sql</span>
+<div class="highlight"><pre>mysql@wordpress-default-data-0:~$ mysql -u dataich -p wordpress &lt; data.sql
 </pre></div>
 
 
@@ -196,7 +196,7 @@
 <p>アプリケーションのディレクトリにwwwというディレクトリを作り、そこにCORESEVERから持ってきたソースを置きます。</p>
 <p>DBの設定を行うため、wp-config.phpを編集します。
 dotcloudでは/home/dotcloud/environment.jsonに各種サービスの設定が書かれます。それを読むようにしてあげればOKです。</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">vi</span> <span class="n">blog</span><span class="p">.</span><span class="n">dataich</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">wp</span><span class="o">-</span><span class="n">config</span><span class="p">.</span><span class="n">php</span>
+<div class="highlight"><pre><span class="nv">$ </span>vi blog.dataich.com/www/wp-config.php
 </pre></div>
 
 
@@ -204,7 +204,7 @@ dotcloudでは/home/dotcloud/environment.jsonに各種サービスの設定が�
 
 <h3>nginxの設定</h3>
 <p>パーマリンク設定をp=123の形から変えている場合は、nginxの設定が必要になります。それにはnginx.confを置いてあげればOKです。 </p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">vi</span> <span class="n">blog</span><span class="p">.</span><span class="n">dataich</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">nginx</span><span class="p">.</span><span class="n">conf</span>
+<div class="highlight"><pre><span class="nv">$ </span>vi blog.dataich.com/www/nginx.conf
 </pre></div>
 
 
@@ -212,41 +212,41 @@ dotcloudでは/home/dotcloud/environment.jsonに各種サービスの設定が�
 
 <h3>wp-contentディレクトリの扱い</h3>
 <p>このままだと1回目以降にPushした際にwp-content以下が消えてしまいます。それではまずいので、すでにwp-contentディレクトリが存在する場合は何もしないようにpostinstallスクリプトを書いておきます。（dotcloudのヘルプそのまんま）</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">vi</span> <span class="n">blog</span><span class="p">.</span><span class="n">dataich</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">postinstall</span>
+<div class="highlight"><pre><span class="nv">$ </span>vi blog.dataich.com/www/postinstall
 </pre></div>
 
 
 <script src="https://gist.github.com/1119572.js?file=postinstall"></script>
 
-<div class="highlight"><pre><span class="err">$</span> <span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">blog</span><span class="p">.</span><span class="n">dataich</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">postinstall</span>
+<div class="highlight"><pre><span class="nv">$ </span>chmod +x blog.dataich.com/www/postinstall
 </pre></div>
 
 
 <h3>dotCloudへWordpressソースをPush</h3>
 <p>これで、動くはず！さあ、Push!!!</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">dotcloud</span> <span class="n">push</span> <span class="n">wordpress</span> <span class="n">blog</span><span class="p">.</span><span class="n">dataich</span><span class="p">.</span><span class="n">com</span>
-<span class="cp"># upload blog.dataich.com ssh:</span><span class="c1">//dotcloud@uploader.dotcloud.com:21122/wordpress</span>
-<span class="cp"># rsync</span>
-<span class="n">Pseudo</span><span class="o">-</span><span class="n">terminal</span> <span class="n">will</span> <span class="n">not</span> <span class="n">be</span> <span class="n">allocated</span> <span class="n">because</span> <span class="n">stdin</span> <span class="n">is</span> <span class="n">not</span> <span class="n">a</span> <span class="n">terminal</span><span class="p">.</span>
-<span class="nl">Warning:</span> <span class="n">Permanently</span> <span class="n">added</span> <span class="err">&#39;</span><span class="p">[</span><span class="n">uploader</span><span class="p">.</span><span class="n">dotcloud</span><span class="p">.</span><span class="n">com</span><span class="p">]</span><span class="o">:</span><span class="mi">21122</span><span class="p">,[</span><span class="mf">184.73.14.49</span><span class="p">]</span><span class="o">:</span><span class="mi">21122</span><span class="err">&#39;</span> <span class="p">(</span><span class="n">RSA</span><span class="p">)</span> <span class="n">to</span> <span class="n">the</span> <span class="n">list</span> <span class="n">of</span> <span class="n">known</span> <span class="n">hosts</span><span class="p">.</span>
-<span class="n">building</span> <span class="n">file</span> <span class="n">list</span> <span class="p">...</span> <span class="n">done</span>
-<span class="p">.</span><span class="o">/</span>
-<span class="n">www</span><span class="o">/</span>
+<div class="highlight"><pre><span class="nv">$ </span>dotcloud push wordpress blog.dataich.com
+<span class="c"># upload blog.dataich.com ssh://dotcloud@uploader.dotcloud.com:21122/wordpress</span>
+<span class="c"># rsync</span>
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Warning: Permanently added <span class="s1">&#39;[uploader.dotcloud.com]:21122,[184.73.14.49]:21122&#39;</span> <span class="o">(</span>RSA<span class="o">)</span> to the list of known hosts.
+building file list ... <span class="k">done</span>
+./
+www/
 
-<span class="p">..</span>
-<span class="p">..</span>
-<span class="p">..</span>
+..
+..
+..
 
-<span class="nl">www:</span> <span class="n">http</span><span class="o">:</span><span class="c1">//xxxxxxxx.dotcloud.com/</span>
+www: http://xxxxxxxx.dotcloud.com/
 </pre></div>
 
 
 <p>上記、URLに正しくアクセスできました。</p>
 <h3>カスタムドメインの設定</h3>
 <p>まずはdotCloud側を設定します。aliasコマンドを使います。</p>
-<div class="highlight"><pre><span class="nl">dataich:</span><span class="o">~</span> <span class="n">dataich</span><span class="err">$</span> <span class="n">dotcloud</span> <span class="n">alias</span> <span class="n">add</span> <span class="n">wordpress</span><span class="p">.</span><span class="n">www</span> <span class="n">blog</span><span class="p">.</span><span class="n">dataich</span><span class="p">.</span><span class="n">com</span>
-<span class="n">Ok</span><span class="p">.</span> <span class="n">Now</span> <span class="n">please</span> <span class="n">add</span> <span class="n">the</span> <span class="n">following</span> <span class="n">DNS</span> <span class="n">record</span><span class="o">:</span>
-<span class="n">blog</span><span class="p">.</span><span class="n">dataich</span><span class="p">.</span><span class="n">com</span><span class="p">.</span> <span class="n">IN</span> <span class="n">CNAME</span> <span class="n">gateway</span><span class="p">.</span><span class="n">dotcloud</span><span class="p">.</span><span class="n">com</span><span class="p">.</span>
+<div class="highlight"><pre>dataich:~ dataich$ dotcloud alias add wordpress.www blog.dataich.com
+Ok. Now please add the following DNS record:
+blog.dataich.com. IN CNAME gateway.dotcloud.com.
 </pre></div>
 
 

@@ -53,7 +53,7 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2008-03-21T00:00:00" pubdate>
+                        <time class="post-time" datetime="2008-03-21T00:00:00+09:00" pubdate>
                             2008/03/21
                         </time>
                         <a href="http://blog.dataich.com/2008/03/21/install-postgres83-on-linux" rel="bookmark"><h1>Postgres8.3 インストール（Linux）</h1></a>
@@ -61,70 +61,70 @@
 
                     <section class="post-content">
                         <h4>ソース取得</h4>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">wget</span> <span class="n">ftp</span><span class="o">:</span><span class="c1">//ftp.jp.postgresql.org/source/v8.3.0/postgresql-8.3.0.tar.gz</span>
+<div class="highlight"><pre><span class="nv">$ </span>wget ftp://ftp.jp.postgresql.org/source/v8.3.0/postgresql-8.3.0.tar.gz
 </pre></div>
 
 
 <h4></h4>
 <h4>ビルドに必要なライブラリをインストール</h4>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">yum</span> <span class="n">install</span> <span class="n">zlib</span><span class="o">-</span><span class="n">devel</span>
-<span class="err">$</span> <span class="n">yum</span> <span class="n">install</span> <span class="n">readline</span><span class="o">-</span><span class="n">devel</span>
+<div class="highlight"><pre><span class="nv">$ </span>yum install zlib-devel
+<span class="nv">$ </span>yum install readline-devel
 </pre></div>
 
 
 <h4>postgresユーザ作成</h4>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">groupadd</span> <span class="n">postgres</span>
-<span class="err">$</span> <span class="n">useradd</span> <span class="o">-</span><span class="n">g</span> <span class="n">postgres</span> <span class="o">-</span><span class="n">d</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">pgsql</span> <span class="n">postgres</span>
-<span class="err">$</span> <span class="n">passwd</span> <span class="n">postgres</span>
+<div class="highlight"><pre><span class="nv">$ </span>groupadd postgres
+<span class="nv">$ </span>useradd -g postgres -d /usr/local/pgsql postgres
+<span class="nv">$ </span>passwd postgres
 </pre></div>
 
 
 <h4>ビルド</h4>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">tar</span> <span class="n">xvfz</span> <span class="n">postgresql</span><span class="o">-</span><span class="mf">8.3.0</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
-<span class="err">$</span> <span class="n">cd</span> <span class="n">postgresql</span><span class="o">-</span><span class="mf">8.3.0</span>
-<span class="err">$</span> <span class="p">.</span><span class="o">/</span><span class="n">configure</span> <span class="o">--</span><span class="n">prefix</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">pgsql</span>
-<span class="err">$</span> <span class="n">make</span> <span class="n">all</span>
-<span class="err">$</span> <span class="n">make</span> <span class="n">install</span>
+<div class="highlight"><pre><span class="nv">$ </span>tar xvfz postgresql-8.3.0.tar.gz
+<span class="nv">$ </span><span class="nb">cd </span>postgresql-8.3.0
+<span class="nv">$ </span>./configure --prefix<span class="o">=</span>/usr/local/pgsql
+<span class="nv">$ </span>make all
+<span class="nv">$ </span>make install
 </pre></div>
 
 
 <h4>所有者変更</h4>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">chown</span> <span class="o">-</span><span class="n">R</span> <span class="n">postgres</span><span class="o">:</span><span class="n">postgres</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">pgsql</span>
+<div class="highlight"><pre><span class="nv">$ </span>chown -R postgres:postgres /usr/local/pgsql
 </pre></div>
 
 
 <h4>データディレクトリ作成</h4>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">su</span> <span class="o">-</span> <span class="n">postgres</span>
-<span class="cp"># mkdir /usr/local/pgsql/data</span>
-<span class="cp"># /usr/local/pgsql/bin/initdb -D /usr/local/pgsql/data</span>
+<div class="highlight"><pre><span class="nv">$ </span>su - postgres
+<span class="c"># mkdir /usr/local/pgsql/data</span>
+<span class="c"># /usr/local/pgsql/bin/initdb -D /usr/local/pgsql/data</span>
 </pre></div>
 
 
 <h4>初期設定</h4>
 <h5>プロファイルを開いて</h5>
-<div class="highlight"><pre><span class="c"># vi ~postgres/.bash_profile</span>
+<div class="highlight"><pre># vi ~postgres/.bash_profile
 </pre></div>
 
 
 <h5>下記を追加</h5>
-<div class="highlight"><pre><span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="err">$</span><span class="n">PATH</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">pgsql</span><span class="o">/</span><span class="n">bin</span>
-<span class="n">export</span> <span class="n">POSTGRES_HOME</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">pgsql</span>
-<span class="n">export</span> <span class="n">PGLIB</span><span class="o">=</span><span class="err">$</span><span class="n">POSTGRES_HOME</span><span class="o">/</span><span class="n">lib</span>
-<span class="n">export</span> <span class="n">PGDATA</span><span class="o">=</span><span class="err">$</span><span class="n">POSTGRES_HOME</span><span class="o">/</span><span class="n">data</span>
-<span class="n">export</span> <span class="n">MANPATH</span><span class="o">=</span><span class="s">&quot;$MANPATH&quot;</span><span class="o">:</span><span class="err">$</span><span class="n">POSTGRES_HOME</span><span class="o">/</span><span class="n">man</span>
-<span class="n">export</span> <span class="n">LD_LIBRARY_PATH</span><span class="o">=</span><span class="s">&quot;$LD_LIBRARY_PATH&quot;</span><span class="o">:</span><span class="s">&quot;$PGLIB&quot;</span>
+<div class="highlight"><pre><span class="x">export PATH=</span><span class="p">$</span><span class="nv">PATH</span><span class="x">:/usr/local/pgsql/bin</span>
+<span class="x">export POSTGRES_HOME=/usr/local/pgsql</span>
+<span class="x">export PGLIB=</span><span class="p">$</span><span class="nv">POSTGRES_HOME</span><span class="x">/lib</span>
+<span class="x">export PGDATA=</span><span class="p">$</span><span class="nv">POSTGRES_HOME</span><span class="x">/data</span>
+<span class="x">export MANPATH=&quot;</span><span class="p">$</span><span class="nv">MANPATH</span><span class="x">&quot;:</span><span class="p">$</span><span class="nv">POSTGRES_HOME</span><span class="x">/man</span>
+<span class="x">export LD_LIBRARY_PATH=&quot;</span><span class="p">$</span><span class="nv">LD_LIBRARY_PATH</span><span class="x">&quot;:&quot;</span><span class="p">$</span><span class="nv">PGLIB</span><span class="x">&quot;</span>
 </pre></div>
 
 
 <h5>読み直しておく</h5>
-<div class="highlight"><pre><span class="c"># source ~postgres/.bash_profile</span>
+<div class="highlight"><pre># source ~postgres/.bash_profile
 </pre></div>
 
 
 <h5>自動起動設定</h5>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">cp</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">postgresql</span><span class="o">-</span><span class="mf">8.3.0</span><span class="o">/</span><span class="n">contrib</span><span class="o">/</span><span class="n">start</span><span class="o">-</span><span class="n">scripts</span><span class="o">/</span><span class="n">linux</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">rc</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">postgres</span>
-<span class="err">$</span> <span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">rc</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">postgres</span>
-<span class="err">$</span> <span class="n">chkconfig</span> <span class="o">--</span><span class="n">add</span> <span class="n">postgres</span>
+<div class="highlight"><pre><span class="nv">$ </span>cp /usr/local/src/postgresql-8.3.0/contrib/start-scripts/linux /etc/rc.d/init.d/postgres
+<span class="nv">$ </span>chmod +x /etc/rc.d/init.d/postgres
+<span class="nv">$ </span>chkconfig --add postgres
 </pre></div>
                     </section>
                     <hr/>

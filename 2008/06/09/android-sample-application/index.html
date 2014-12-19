@@ -53,7 +53,7 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2008-06-09T00:00:00" pubdate>
+                        <time class="post-time" datetime="2008-06-09T00:00:00+09:00" pubdate>
                             2008/06/09
                         </time>
                         <a href="http://blog.dataich.com/2008/06/09/android-sample-application" rel="bookmark"><h1>Android - サンプルアプリケーションの概要</h1></a>
@@ -61,21 +61,21 @@
 
                     <section class="post-content">
                         <p>前回作成したサンプルアプリケーションのディレクトリ構成を見てみると、下記のようになっています。</p>
-<div class="highlight"><pre><span class="n">android</span>
-<span class="err">├──</span> <span class="n">AndroidManifest</span><span class="p">.</span><span class="n">xml</span>
-<span class="err">├──</span> <span class="n">res</span>
-<span class="err">│  </span> <span class="err">├──</span> <span class="n">drawable</span>
-<span class="err">│  </span> <span class="err">│  </span> <span class="err">└──</span> <span class="n">icon</span><span class="p">.</span><span class="n">png</span>
-<span class="err">│  </span> <span class="err">├──</span> <span class="n">layout</span>
-<span class="err">│  </span> <span class="err">│  </span> <span class="err">└──</span> <span class="n">main</span><span class="p">.</span><span class="n">xm</span>
-<span class="err">│  </span> <span class="err">└──</span> <span class="n">values</span>
-<span class="err">│  </span>     <span class="err">└──</span> <span class="n">strings</span><span class="p">.</span><span class="n">xml</span>
-<span class="err">└──</span> <span class="n">src</span>
-    <span class="err">└──</span> <span class="n">com</span>
-        <span class="err">└──</span> <span class="n">lancard</span>
-            <span class="err">└──</span> <span class="n">tasklist</span>
-                <span class="err">├──</span> <span class="n">R</span><span class="p">.</span><span class="n">java</span>
-                <span class="err">└──</span> <span class="n">TaskList</span><span class="p">.</span><span class="n">java</span>
+<div class="highlight"><pre>android
+├── AndroidManifest.xml
+├── res
+│   ├── drawable
+│   │   └── icon.png
+│   ├── layout
+│   │   └── main.xm
+│   └── values
+│       └── strings.xml
+└── src
+    └── com
+        └── lancard
+            └── tasklist
+                ├── R.java
+                └── TaskList.java
 </pre></div>
 
 
@@ -98,24 +98,24 @@ res配下のディレクトリ構成と同じように、クラスが作成さ�
 res/drawable/icon.pnfの場合は、R.drawable.iconとなっています。
 res/strings.xmlの場合は、xml 内のresources/stringの属性app_nameが読み込まれています。
 これを使用して、各種リソースにアクセスすることになります。</p>
-<div class="highlight"><pre><span class="n">package</span> <span class="n">com</span><span class="p">.</span><span class="n">lancard</span><span class="p">.</span><span class="n">tasklist</span><span class="p">;</span>
+<div class="highlight"><pre>package com.lancard.tasklist;
 
-<span class="n">public</span> <span class="n">final</span> <span class="n">class</span> <span class="n">R</span> <span class="p">{</span>
-    <span class="n">public</span> <span class="k">static</span> <span class="n">final</span> <span class="n">class</span> <span class="n">attr</span> <span class="p">{</span>
-    <span class="p">}</span>
+public final class R {
+    public static final class attr {
+    }
 
-    <span class="n">public</span> <span class="k">static</span> <span class="n">final</span> <span class="n">class</span> <span class="n">drawable</span> <span class="p">{</span>
-        <span class="n">public</span> <span class="k">static</span> <span class="n">final</span> <span class="kt">int</span> <span class="n">icon</span><span class="o">=</span><span class="mh">0x7f020000</span><span class="p">;</span>
-    <span class="p">}</span>
+    public static final class drawable {
+        public static final int icon=0x7f020000;
+    }
 
-    <span class="n">public</span> <span class="k">static</span> <span class="n">final</span> <span class="n">class</span> <span class="n">layout</span> <span class="p">{</span>
-        <span class="n">public</span> <span class="k">static</span> <span class="n">final</span> <span class="kt">int</span> <span class="n">main</span><span class="o">=</span><span class="mh">0x7f030000</span><span class="p">;</span>
-    <span class="p">}</span>
+    public static final class layout {
+        public static final int main=0x7f030000;
+    }
 
-    <span class="n">public</span> <span class="k">static</span> <span class="n">final</span> <span class="n">class</span> <span class="n">string</span> <span class="p">{</span>
-        <span class="n">public</span> <span class="k">static</span> <span class="n">final</span> <span class="kt">int</span> <span class="n">app_name</span><span class="o">=</span><span class="mh">0x7f040000</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+    public static final class string {
+        public static final int app_name=0x7f040000;
+    }
+}
 </pre></div>
 
 
@@ -125,18 +125,18 @@ res/strings.xmlの場合は、xml 内のresources/stringの属性app_nameが読�
 もちろん、 Activityクラスを継承した別クラスも用意されています。
 onCreateメソッドは、アプリケーション実行時に最初に呼ばれるメソッドで、メソッドの最初で親クラスのonCreateメソッドを呼び出す必要があります。
 その後、setContentView(R.layout.main)として、メイン画面のビュー定義をセットしています。</p>
-<div class="highlight"><pre><span class="n">package</span> <span class="n">com</span><span class="p">.</span><span class="n">lancard</span><span class="p">.</span><span class="n">tasklist</span><span class="p">;</span>
+<div class="highlight"><pre><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">lancard</span><span class="o">.</span><span class="n">tasklist</span><span class="p">;</span>
 
-<span class="n">import</span> <span class="n">android</span><span class="p">.</span><span class="n">app</span><span class="p">.</span><span class="n">Activity</span><span class="p">;</span>
-<span class="n">import</span> <span class="n">android</span><span class="p">.</span><span class="n">os</span><span class="p">.</span><span class="n">Bundle</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">android.app.Activity</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="p">;</span>
 
-<span class="n">public</span> <span class="n">class</span> <span class="n">TaskList</span> <span class="n">extends</span> <span class="n">Activity</span> <span class="p">{</span>
+<span class="n">public</span> <span class="k">class</span> <span class="nc">TaskList</span> <span class="n">extends</span> <span class="n">Activity</span> <span class="p">{</span>
 
-    <span class="cm">/** Called when the activity is first created. */</span>
-    <span class="err">@</span><span class="n">Override</span>
-    <span class="n">public</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">icicle</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">super</span><span class="p">.</span><span class="n">onCreate</span><span class="p">(</span><span class="n">icicle</span><span class="p">);</span>
-        <span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">main</span><span class="p">);</span>
+    <span class="o">/**</span> <span class="n">Called</span> <span class="n">when</span> <span class="n">the</span> <span class="n">activity</span> <span class="ow">is</span> <span class="n">first</span> <span class="n">created</span><span class="o">.</span> <span class="o">*/</span>
+    <span class="nd">@Override</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">icicle</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nb">super</span><span class="o">.</span><span class="n">onCreate</span><span class="p">(</span><span class="n">icicle</span><span class="p">);</span>
+        <span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">main</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>

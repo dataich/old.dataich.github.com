@@ -53,7 +53,7 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2008-12-12T00:00:00" pubdate>
+                        <time class="post-time" datetime="2008-12-12T00:00:00+09:00" pubdate>
                             2008/12/12
                         </time>
                         <a href="http://blog.dataich.com/2008/12/12/titanium-tutorial-error" rel="bookmark"><h1>ただTitaniumチュートリアルをやってみただけだがエラーが出たので、ここに書いた</h1></a>
@@ -73,37 +73,37 @@
 <p>上記を参考に進めてみた。</p>
 <h4>プロジェクト生成</h4>
 <p>Terminalから</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">app</span> <span class="n">create</span><span class="o">:</span><span class="n">project</span> <span class="p">.</span> <span class="n">myproject</span> <span class="n">titanium</span>
+<div class="highlight"><pre><span class="nv">$ </span>app create:project . myproject titanium
 </pre></div>
 
 
 <p>下記のように出力されればプロジェクト生成成功。</p>
-<div class="highlight"><pre><span class="n">Using</span> <span class="n">service</span> <span class="n">titanium</span>
-<span class="n">Connecting</span> <span class="n">to</span> <span class="n">update</span> <span class="n">server</span> <span class="p">...</span>
-<span class="n">Fetching</span> <span class="n">release</span> <span class="n">info</span> <span class="n">from</span> <span class="n">distribution</span> <span class="n">server</span><span class="p">...</span>
-<span class="n">Your</span> <span class="n">project</span> <span class="n">was</span> <span class="n">created</span> <span class="n">in</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">yourname</span><span class="o">/</span><span class="n">myproject</span>
-<span class="n">Appcelerator</span> <span class="n">titanium</span> <span class="n">project</span> <span class="n">created</span> <span class="p">...</span> <span class="n">Code</span> <span class="n">strong</span><span class="o">!</span>
+<div class="highlight"><pre>Using service titanium
+Connecting to update server ...
+Fetching release info from distribution server...
+Your project was created in /Users/yourname/myproject
+Appcelerator titanium project created ... Code strong!
 </pre></div>
 
 
 <p>ちなみにSDKのインストールに失敗したのか、最初はうまくいかなかった。
 再インストールしたらうまくいった。</p>
 <h4>プロジェクト（アプリケーション）のパッケージング</h4>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">cd</span> <span class="n">myproject</span>
-<span class="err">$</span> <span class="n">app</span> <span class="n">package</span><span class="o">:</span><span class="n">project</span> <span class="n">osx</span> <span class="err">#</span><span class="n">Windows</span><span class="err">向けの場合は</span><span class="n">win32</span>
-<span class="n">Create</span> <span class="n">directory</span> <span class="p">[</span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">yoshida</span><span class="o">/</span><span class="n">Work</span><span class="o">/</span><span class="n">temp</span><span class="o">/</span><span class="n">myproject</span><span class="o">/</span><span class="n">stage</span><span class="p">]</span><span class="o">?</span> <span class="p">(</span><span class="n">Y</span><span class="p">)</span><span class="n">es</span><span class="p">,(</span><span class="n">N</span><span class="p">)</span><span class="n">o</span><span class="p">,(</span><span class="n">A</span><span class="p">)</span><span class="n">ll</span> <span class="p">[</span><span class="n">Y</span><span class="p">]</span> <span class="n">Y</span>
-<span class="n">Connecting</span> <span class="n">to</span> <span class="n">update</span> <span class="n">server</span> <span class="p">...</span>
-<span class="n">Fetching</span> <span class="n">release</span> <span class="n">info</span> <span class="n">from</span> <span class="n">distribution</span> <span class="n">server</span><span class="p">...</span>
-<span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">1</span><span class="p">)</span> <span class="n">titanium</span><span class="o">:</span><span class="n">osx</span><span class="o">:</span> <span class="mi">0</span><span class="o">%</span> <span class="o">|</span>
-<span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">1</span><span class="p">)</span> <span class="n">titanium</span><span class="o">:</span><span class="n">osx</span><span class="o">:</span> <span class="mi">1</span><span class="o">%</span> <span class="o">|</span>
-<span class="p">...</span>
-<span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">1</span><span class="p">)</span> <span class="n">titanium</span><span class="o">:</span><span class="n">osx</span><span class="o">:</span> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="n">ooooooooooooooooooooooooooooooooooooooooooooooooooooo</span><span class="o">|</span> <span class="mf">5.4</span><span class="n">MB</span> <span class="mf">302.5</span><span class="n">KB</span><span class="o">/</span><span class="n">s</span> <span class="n">ETA</span><span class="o">:</span> <span class="mo">00</span><span class="o">:</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd </span>myproject
+<span class="nv">$ </span>app package:project osx <span class="c">#Windows向けの場合はwin32</span>
+Create directory <span class="o">[</span>/Users/yoshida/Work/temp/myproject/stage<span class="o">]</span>? <span class="o">(</span>Y<span class="o">)</span>es,<span class="o">(</span>N<span class="o">)</span>o,<span class="o">(</span>A<span class="o">)</span>ll <span class="o">[</span>Y<span class="o">]</span> Y
+Connecting to update server ...
+Fetching release info from distribution server...
+<span class="o">(</span>1/1<span class="o">)</span> titanium:osx: 0% <span class="p">|</span>
+<span class="o">(</span>1/1<span class="o">)</span> titanium:osx: 1% <span class="p">|</span>
+...
+<span class="o">(</span>1/1<span class="o">)</span> titanium:osx: 100% <span class="p">|</span>ooooooooooooooooooooooooooooooooooooooooooooooooooooo<span class="p">|</span> 5.4MB 302.5KB/s ETA: 00:00:00
 
-<span class="n">Installed</span> <span class="n">titanium</span><span class="o">:</span><span class="n">osx</span> <span class="mf">0.1</span>
-<span class="n">Packaging</span> <span class="n">Titanium</span> <span class="k">for</span> <span class="n">target</span> <span class="n">os</span><span class="o">:</span> <span class="n">osx</span>
-<span class="n">Validating</span> <span class="n">tiapp</span><span class="p">.</span><span class="n">xml</span> <span class="p">...</span>
-<span class="n">Looks</span> <span class="n">good</span> <span class="p">...</span> <span class="n">Let</span><span class="err">&#39;</span><span class="n">s</span> <span class="n">packager</span> <span class="n">up</span><span class="o">!</span>
-<span class="n">Your</span> <span class="n">Titanium</span> <span class="n">application</span> <span class="n">is</span> <span class="n">located</span> <span class="n">in</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">yoshida</span><span class="o">/</span><span class="n">Work</span><span class="o">/</span><span class="n">temp</span><span class="o">/</span><span class="n">myproject</span><span class="o">/</span><span class="n">stage</span>
+Installed titanium:osx 0.1
+Packaging Titanium <span class="k">for</span> target os: osx
+Validating tiapp.xml ...
+Looks good ... Let<span class="err">&#39;</span>s packager up!
+Your Titanium application is located in /Users/yoshida/Work/temp/myproject/stage
 </pre></div>
 
 

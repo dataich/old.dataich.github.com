@@ -53,7 +53,7 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2008-03-26T00:00:00" pubdate>
+                        <time class="post-time" datetime="2008-03-26T00:00:00+09:00" pubdate>
                             2008/03/26
                         </time>
                         <a href="http://blog.dataich.com/2008/03/26/openssl-on-jruby" rel="bookmark"><h1>jrubyでopenssl</h1></a>
@@ -61,36 +61,36 @@
 
                     <section class="post-content">
                         <p>まずはjruby用のopensslをgemにてインストール</p>
-<div class="highlight"><pre><span class="cp"># jruby -S gem install jruby-openssl</span>
-<span class="n">Successfully</span> <span class="n">installed</span> <span class="n">jruby</span><span class="o">-</span><span class="n">openssl</span><span class="o">-</span><span class="mf">0.2</span>
-<span class="mi">1</span> <span class="n">gem</span> <span class="n">installed</span>
-<span class="n">Installing</span> <span class="n">ri</span> <span class="n">documentation</span> <span class="k">for</span> <span class="n">jruby</span><span class="o">-</span><span class="n">openssl</span><span class="o">-</span><span class="mf">0.2</span><span class="p">...</span>
-<span class="n">Installing</span> <span class="n">RDoc</span> <span class="n">documentation</span> <span class="k">for</span> <span class="n">jruby</span><span class="o">-</span><span class="n">openssl</span><span class="o">-</span><span class="mf">0.2</span><span class="p">...</span>
+<div class="highlight"><pre># jruby -S gem install jruby-openssl
+Successfully installed jruby-openssl-0.2
+1 gem installed
+Installing ri documentation for jruby-openssl-0.2...
+Installing RDoc documentation for jruby-openssl-0.2...
 </pre></div>
 
 
 <p>コードとしては</p>
-<div class="highlight"><pre><span class="n">require</span> <span class="err">&#39;</span><span class="n">openssl</span><span class="err">&#39;</span>
+<div class="highlight"><pre>require &#39;openssl&#39;
 
-<span class="n">key</span> <span class="o">=</span> <span class="s">&quot;キーとなる文字列&quot;</span>
-<span class="n">target</span> <span class="o">=</span> <span class="s">&quot;暗号化ターゲット&quot;</span>
-<span class="n">aes</span> <span class="o">=</span> <span class="n">OpenSSL</span><span class="o">::</span><span class="n">Cipher</span><span class="o">::</span><span class="n">Cipher</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="s">&quot;AES-256-CBC&quot;</span><span class="p">)</span>
-<span class="n">aes</span><span class="p">.</span><span class="n">encrypt</span>
-<span class="n">aes</span><span class="p">.</span><span class="n">pkcs5_keyivgen</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+key = &quot;キーとなる文字列&quot;
+target = &quot;暗号化ターゲット&quot;
+aes = OpenSSL::Cipher::Cipher.new(&quot;AES-256-CBC&quot;)
+aes.encrypt
+aes.pkcs5_keyivgen(key)
 
-<span class="cp"># 暗号化</span>
-<span class="cp"># 溢れる分があるので、finalの結合</span>
-<span class="n">value</span> <span class="o">=</span> <span class="n">aes</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">target</span><span class="p">)</span> <span class="o">+</span> <span class="n">aes</span><span class="p">.</span><span class="n">final</span>
-<span class="cp"># DBに登録したいのでHEXにしておく。</span>
-<span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">.</span><span class="n">unpack</span><span class="p">(</span><span class="s">&quot;H*&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+# 暗号化
+# 溢れる分があるので、finalの結合
+value = aes.update(target) + aes.final
+# DBに登録したいのでHEXにしておく。
+value = value.unpack(&quot;H*&quot;)[0]
 
-<span class="cp"># 複合化</span>
-<span class="n">aes</span> <span class="o">=</span> <span class="n">OpenSSL</span><span class="o">::</span><span class="n">Cipher</span><span class="o">::</span><span class="n">AES</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="s">&quot;256-CBC&quot;</span><span class="p">)</span>
-<span class="n">aes</span><span class="p">.</span><span class="n">decrypt</span>
-<span class="n">aes</span><span class="p">.</span><span class="n">pkcs5_keyivgen</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+# 複合化
+aes = OpenSSL::Cipher::AES.new(&quot;256-CBC&quot;)
+aes.decrypt
+aes.pkcs5_keyivgen(key)
 
-<span class="cp"># HEXをunpackし、複合化する。ここでもfinaｌを結合</span>
-<span class="n">value</span> <span class="o">=</span> <span class="n">aes</span><span class="p">.</span><span class="n">update</span><span class="p">([</span><span class="n">value</span><span class="p">].</span><span class="n">pack</span><span class="p">(</span><span class="s">&quot;H*&quot;</span><span class="p">))</span> <span class="o">+</span> <span class="n">aes</span><span class="p">.</span><span class="n">final</span>
+# HEXをunpackし、複合化する。ここでもfinaｌを結合
+value = aes.update([value].pack(&quot;H*&quot;)) + aes.final
 </pre></div>
                     </section>
                     <hr/>

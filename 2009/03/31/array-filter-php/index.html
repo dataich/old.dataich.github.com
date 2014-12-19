@@ -53,7 +53,7 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2009-03-31T00:00:00" pubdate>
+                        <time class="post-time" datetime="2009-03-31T00:00:00+09:00" pubdate>
                             2009/03/31
                         </time>
                         <a href="http://blog.dataich.com/2009/03/31/array-filter-php" rel="bookmark"><h1>array_filter - PHPの配列で条件に当てはまる要素を取り出す</h1></a>
@@ -70,19 +70,19 @@
 <li>フィルタリングする配列、コールバック関数を引数にし、array_filterにて実際に要素をフィルタリングしています。その結果を$male_onlyに代入します。
 結果</li>
 </ol>
-<div class="highlight"><pre><span class="n">Array</span>
-    <span class="p">(</span>
-        <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">Array</span>
-            <span class="p">(</span>
-                <span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="err">田中　太郎</span>
-                <span class="p">[</span><span class="n">sex</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">1</span>
-            <span class="p">)</span>   
-        <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">Array</span>
-            <span class="p">(</span>
-                <span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="err">鈴木　太郎</span>
-                <span class="p">[</span><span class="n">sex</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">1</span>
-            <span class="p">)</span>   
-    <span class="p">)</span>
+<div class="highlight"><pre>Array
+    (
+        [0] =&gt; Array
+            (
+                [name] =&gt; 田中　太郎
+                [sex] =&gt; 1
+            )   
+        [2] =&gt; Array
+            (
+                [name] =&gt; 鈴木　太郎
+                [sex] =&gt; 1
+            )   
+    )
 </pre></div>
 
 

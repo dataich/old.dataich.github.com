@@ -53,7 +53,7 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2011-12-09T00:00:00" pubdate>
+                        <time class="post-time" datetime="2011-12-09T00:00:00+09:00" pubdate>
                             2011/12/09
                         </time>
                         <a href="http://blog.dataich.com/2011/12/09/bdd-with-phpunit-story" rel="bookmark"><h1>PHPUnit_Storyで振舞駆動開発なテストを書いてみた</h1></a>
@@ -72,15 +72,15 @@
 <script src="https://gist.github.com/1447145.js?file=EntryTest.php"></script>
 
 <p>実行結果はこうなります。</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">phpunit</span> <span class="o">--</span><span class="n">debug</span> <span class="n">EntryTest</span><span class="p">.</span><span class="n">php</span> 
-<span class="n">PHPUnit</span> <span class="mf">3.6.2</span> <span class="n">by</span> <span class="n">Sebastian</span> <span class="n">Bergmann</span><span class="p">.</span>
+<div class="highlight"><pre><span class="nv">$ </span>phpunit --debug EntryTest.php 
+PHPUnit 3.6.2 by Sebastian Bergmann.
 
-<span class="n">Starting</span> <span class="n">test</span> <span class="err">&#39;</span><span class="n">EntryTest</span><span class="o">::</span><span class="n">testStatus</span><span class="err">&#39;</span><span class="p">.</span>
-<span class="p">.</span>
+Starting <span class="nb">test</span> <span class="s1">&#39;EntryTest::testStatus&#39;</span>.
+.
 
-<span class="nl">Time:</span> <span class="mi">0</span> <span class="n">seconds</span><span class="p">,</span> <span class="n">Memory</span><span class="o">:</span> <span class="mf">5.50</span><span class="n">Mb</span>
+Time: <span class="m">0</span> seconds, Memory: 5.50Mb
 
-<span class="n">OK</span> <span class="p">(</span><span class="mi">1</span> <span class="n">test</span><span class="p">,</span> <span class="mi">3</span> <span class="n">assertions</span><span class="p">)</span>
+OK <span class="o">(</span><span class="m">1</span> <span class="nb">test</span>, <span class="m">3</span> assertions<span class="o">)</span>
 </pre></div>
 
 
@@ -88,28 +88,28 @@
 <script src="https://gist.github.com/1447145.js?file=EntrySpec.php"></script>
 
 <p>実行結果はこうです。なんかそれっぽくなりました</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">phpunit</span> <span class="o">--</span><span class="n">debug</span> <span class="o">--</span><span class="n">verbose</span> <span class="o">--</span><span class="n">printer</span> <span class="n">PHPUnit_Extensions_Story_ResultPrinter_Text</span> <span class="n">EntrySpec</span><span class="p">.</span><span class="n">php</span>
-<span class="n">PHPUnit</span> <span class="mf">3.6.2</span> <span class="n">by</span> <span class="n">Sebastian</span> <span class="n">Bergmann</span><span class="p">.</span>
+<div class="highlight"><pre><span class="nv">$ </span>phpunit --debug --verbose --printer PHPUnit_Extensions_Story_ResultPrinter_Text EntrySpec.php
+PHPUnit 3.6.2 by Sebastian Bergmann.
 
-<span class="n">EntrySpec</span>
- <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Status</span> <span class="k">for</span> <span class="n">new</span> <span class="n">entry</span> <span class="n">is</span> <span class="n">draft</span>
+EntrySpec
+ <span class="o">[</span>x<span class="o">]</span> Status <span class="k">for</span> new entry is draft
 
-   <span class="n">Given</span> <span class="n">New</span> <span class="n">Entry</span> 
-    <span class="n">Then</span> <span class="n">Status</span> <span class="n">should</span> <span class="n">be</span> <span class="n">draft</span>
+   Given New Entry 
+    Then Status should be draft
 
- <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Status</span> <span class="n">after</span> <span class="n">publish</span> <span class="n">entry</span> <span class="n">is</span> <span class="n">published</span>
+ <span class="o">[</span>x<span class="o">]</span> Status after publish entry is published
 
-   <span class="n">Given</span> <span class="n">Some</span> <span class="n">Entry</span> 
-    <span class="n">When</span> <span class="n">publish</span> <span class="n">Entry</span> 
-    <span class="n">Then</span> <span class="n">Status</span> <span class="n">should</span> <span class="n">be</span> <span class="n">published</span>
+   Given Some Entry 
+    When publish Entry 
+    Then Status should be published
 
- <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Status</span> <span class="n">after</span> <span class="n">delete</span> <span class="n">entry</span> <span class="n">is</span> <span class="n">deleted</span>
+ <span class="o">[</span>x<span class="o">]</span> Status after delete entry is deleted
 
-   <span class="n">Given</span> <span class="n">Some</span> <span class="n">Entry</span> 
-    <span class="n">When</span> <span class="n">delete</span> <span class="n">Entry</span> 
-    <span class="n">Then</span> <span class="n">Status</span> <span class="n">should</span> <span class="n">be</span> <span class="n">deleted</span>
+   Given Some Entry 
+    When delete Entry 
+    Then Status should be deleted
 
-<span class="nl">Scenarios:</span> <span class="mi">3</span><span class="p">,</span> <span class="n">Failed</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Skipped</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Incomplete</span><span class="o">:</span> <span class="mf">0.</span>
+Scenarios: 3, Failed: 0, Skipped: 0, Incomplete: 0.
 </pre></div>
 
 

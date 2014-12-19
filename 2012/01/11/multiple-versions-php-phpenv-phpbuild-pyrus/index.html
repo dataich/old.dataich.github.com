@@ -53,7 +53,7 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2012-01-11T00:00:00" pubdate>
+                        <time class="post-time" datetime="2012-01-11T00:00:00+09:00" pubdate>
                             2012/01/11
                         </time>
                         <a href="http://blog.dataich.com/2012/01/11/multiple-versions-php-phpenv-phpbuild-pyrus" rel="bookmark"><h1>phpenv+php-build+pyrusでの複数バージョンPHP管理など</h1></a>
@@ -67,54 +67,54 @@
 <li>Pyrus PEAR後継パッケージマネージャ</li>
 </ul>
 <h2>phpenvのインストール</h2>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">curl</span> <span class="n">https</span><span class="o">:</span><span class="c1">//raw.github.com/CHH/phpenv/master/bin/phpenv-install.sh | sh</span>
-<span class="n">Installing</span> <span class="n">phpenv</span> <span class="n">in</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">dataich</span><span class="o">/</span><span class="p">.</span><span class="n">phpenv</span>
-<span class="nl">remote:</span> <span class="n">Counting</span> <span class="n">objects</span><span class="o">:</span> <span class="mi">1008</span><span class="p">,</span> <span class="n">done</span><span class="p">.</span>
-<span class="nl">remote:</span> <span class="n">Compressing</span> <span class="n">objects</span><span class="o">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">422</span><span class="o">/</span><span class="mi">422</span><span class="p">),</span> <span class="n">done</span><span class="p">.</span>
-<span class="nl">remote:</span> <span class="n">Total</span> <span class="mi">1008</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">633</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">928</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">558</span><span class="p">)</span>
-<span class="n">Receiving</span> <span class="n">objects</span><span class="o">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">1008</span><span class="o">/</span><span class="mi">1008</span><span class="p">),</span> <span class="mf">135.47</span> <span class="n">KiB</span> <span class="o">|</span> <span class="mi">124</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="p">.</span>
-<span class="n">Resolving</span> <span class="n">deltas</span><span class="o">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">633</span><span class="o">/</span><span class="mi">633</span><span class="p">),</span> <span class="n">done</span><span class="p">.</span>
-<span class="n">Success</span><span class="p">.</span>
+<div class="highlight"><pre><span class="nv">$</span> <span class="nv">curl</span> <span class="n">https:</span><span class="sr">//</span><span class="n">raw</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="sr">/CHH/</span><span class="n">phpenv</span><span class="sr">/master/</span><span class="n">bin</span><span class="o">/</span><span class="n">phpenv</span><span class="o">-</span><span class="n">install</span><span class="o">.</span><span class="n">sh</span> <span class="o">|</span> <span class="n">sh</span>
+<span class="n">Installing</span> <span class="n">phpenv</span> <span class="n">in</span> <span class="sr">/Users/</span><span class="n">dataich</span><span class="o">/.</span><span class="n">phpenv</span>
+<span class="n">remote:</span> <span class="n">Counting</span> <span class="n">objects:</span> <span class="mi">1008</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote:</span> <span class="n">Compressing</span> <span class="n">objects:</span> <span class="mi">100</span><span class="nv">%</span> <span class="err">(</span><span class="nv">422</span><span class="o">/</span><span class="mi">422</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote:</span> <span class="n">Total</span> <span class="mi">1008</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">633</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">928</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">558</span><span class="p">)</span>
+<span class="n">Receiving</span> <span class="n">objects:</span> <span class="mi">100</span><span class="nv">%</span> <span class="err">(</span><span class="nv">1008</span><span class="sr">/1008), 135.47 KiB | 124 KiB/s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Resolving</span> <span class="n">deltas:</span> <span class="mi">100</span><span class="nv">%</span> <span class="err">(</span><span class="nv">633</span><span class="o">/</span><span class="mi">633</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Success</span><span class="o">.</span>
 
-<span class="n">Now</span> <span class="n">add</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">dataich</span><span class="o">/</span><span class="p">.</span><span class="n">phpenv</span><span class="o">/</span><span class="n">bin</span> <span class="n">to</span> <span class="n">your</span> <span class="err">$</span><span class="n">PATH</span><span class="p">,</span> <span class="n">add</span> <span class="s">&quot;eval $(phpenv init -)&quot;</span> <span class="n">at</span> <span class="n">the</span> <span class="n">end</span> <span class="n">of</span> <span class="n">your</span> <span class="o">~/</span><span class="p">.</span><span class="n">bashrc</span> <span class="n">and</span> <span class="n">restart</span> <span class="n">your</span> <span class="n">shell</span> <span class="n">to</span> <span class="n">use</span> <span class="n">phpenv</span><span class="p">.</span>
+<span class="n">Now</span> <span class="n">add</span> <span class="sr">/Users/</span><span class="n">dataich</span><span class="sr">/.phpenv/</span><span class="n">bin</span> <span class="n">to</span> <span class="n">your</span> <span class="nv">$PATH</span><span class="p">,</span> <span class="n">add</span> <span class="s">&quot;eval $(phpenv init -)&quot;</span> <span class="n">at</span> <span class="n">the</span> <span class="n">end</span> <span class="n">of</span> <span class="n">your</span> <span class="o">~/.</span><span class="n">bashrc</span> <span class="ow">and</span> <span class="n">restart</span> <span class="n">your</span> <span class="n">shell</span> <span class="n">to</span> <span class="k">use</span> <span class="n">phpenv</span><span class="o">.</span>
 </pre></div>
 
 
 <p>最後の行で言われたとおり、<code>~/.bashrc</code>に追記します。</p>
-<div class="highlight"><pre><span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="s">&quot;/Users/dataich/.phpenv/bin:$PATH&quot;</span>
-<span class="n">eval</span> <span class="s">&quot;$(phpenv init -)&quot;</span>
+<div class="highlight"><pre><span class="x">export PATH=&quot;/Users/dataich/.phpenv/bin:</span><span class="p">$</span><span class="nv">PATH</span><span class="x">&quot;</span>
+<span class="x">eval &quot;</span><span class="p">$(</span><span class="err">phpenv</span> <span class="err">init</span> <span class="err">-</span><span class="p">)</span><span class="x">&quot;</span>
 </pre></div>
 
 
 <p>phpenvは~/.phpenv以下にインストールされており、~/.phpenv/versionsにバージョンごとのPHPをインストールしてやることで切り替えが可能になります。</p>
 <h2>php-buildのインストール</h2>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/CHH/php-build.git</span>
-<span class="err">$</span> <span class="n">cd</span> <span class="n">php</span><span class="o">-</span><span class="n">build</span>
-<span class="err">$</span> <span class="p">.</span><span class="o">/</span><span class="n">install</span><span class="p">.</span><span class="n">sh</span>
-<span class="n">Installing</span> <span class="n">php</span><span class="o">-</span><span class="n">build</span> <span class="n">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span>
-<span class="o">-</span> <span class="n">Creating</span> <span class="n">Directories</span><span class="p">...</span> <span class="n">Done</span><span class="p">.</span>
-<span class="o">-</span> <span class="n">Copying</span> <span class="n">files</span><span class="p">...</span> <span class="n">Done</span><span class="p">.</span>
+<div class="highlight"><pre><span class="nv">$ </span>git clone https://github.com/CHH/php-build.git
+<span class="nv">$ </span><span class="nb">cd </span>php-build
+<span class="nv">$ </span>./install.sh
+Installing php-build in /usr/local
+- Creating Directories... Done.
+- Copying files... Done.
 </pre></div>
 
 
 <p>これで必要なもののインストールは完了です。また、現状はインストールできるPHPバージョンが増えたりした場合は、git pullして./install.shを再度実行しないといけないと思います。</p>
 <h2>php-buildを使用してPHPをインストール</h2>
 <p>まずはインストール可能なバージョンを調べます。</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">php</span><span class="o">-</span><span class="n">build</span> <span class="o">--</span><span class="n">definitions</span>
-<span class="mf">5.2.17</span>
-<span class="mf">5.3.2</span>
-<span class="mf">5.3.6</span>
-<span class="mf">5.3.8</span>
-<span class="mf">5.3.9</span><span class="n">RC3</span>
-<span class="mf">5.3</span><span class="n">snapshot</span>
-<span class="mf">5.4.0</span><span class="n">RC1</span>
-<span class="mf">5.4.0</span><span class="n">RC2</span>
-<span class="mf">5.4.0</span><span class="n">RC3</span>
-<span class="mf">5.4.0</span><span class="n">RC4</span>
-<span class="mf">5.4.0</span><span class="n">alpha3</span>
-<span class="mf">5.4.0</span><span class="n">beta1</span>
-<span class="mf">5.4.0</span><span class="n">beta2</span>
-<span class="mf">5.4</span><span class="n">snapshot</span>
+<div class="highlight"><pre><span class="nv">$ </span>php-build --definitions
+5.2.17
+5.3.2
+5.3.6
+5.3.8
+5.3.9RC3
+5.3snapshot
+5.4.0RC1
+5.4.0RC2
+5.4.0RC3
+5.4.0RC4
+5.4.0alpha3
+5.4.0beta1
+5.4.0beta2
+5.4snapshot
 </pre></div>
 
 
@@ -123,36 +123,36 @@
 <p>php-buildはApacheモジュールのビルドに対応していません（GitHubにIssueにはFeatureとして登録されてます。）。
 ソースを読んでみるconfigure_optionを呼び出してあげればよさそうです。なのでdefinitionsに定義してあるスクリプトに変更を入れてあげます。
 このdefinitions配下にあるスクリプトはいろいろビルド方法を調整する時に使えそうです（pyrusじゃなくてpear使いたかったらwith_pear書いて、install_pyrusコメントアウトするとか。）</p>
-<div class="highlight"><pre><span class="cp"># /usr/local/share/php-build/definitions/5.3.8</span>
-<span class="n">configure_option</span> <span class="s">&quot;--with-apxs2&quot;</span> <span class="s">&quot;/usr/local/Cellar/httpd/2.2.21/sbin/apxs&quot;</span> <span class="err">#この行を追加する。</span><span class="n">apxs</span><span class="err">へのパスは環境に応じて置き換えてください。</span>
-<span class="n">install_package</span> <span class="s">&quot;http://www.php.net/distributions/php-5.3.8.tar.bz2&quot;</span>
-<span class="n">install_pyrus</span>
+<div class="highlight"><pre># /usr/local/share/php-build/definitions/5.3.8
+configure_option &quot;--with-apxs2&quot; &quot;/usr/local/Cellar/httpd/2.2.21/sbin/apxs&quot; #この行を追加する。apxsへのパスは環境に応じて置き換えてください。
+install_package &quot;http://www.php.net/distributions/php-5.3.8.tar.bz2&quot;
+install_pyrus
 
-<span class="n">install_xdebug</span> <span class="s">&quot;2.1.2&quot;</span>
+install_xdebug &quot;2.1.2&quot;
 </pre></div>
 
 
 <p>まあPHPをビルドする度にlibphp5.soを上書きしてしまうだろうということと、phpenvで切り替えた時どうするのっていうのはありますが・・・。</p>
 <h2>気をとりなおしてphp-buildを使用してPHPをインストール</h2>
 <p>ではphp-buildを使用して5.3.8をインストールします。プレフィックスには~/.phpenv/versions/5.3.8を指定します。実はここでちょっとはまったのですが、最後の引数はプレフィックスなのでフルパスである必要があります。</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">php</span><span class="o">-</span><span class="n">build</span> <span class="mf">5.3.8</span> <span class="o">~/</span><span class="p">.</span><span class="n">phpenv</span><span class="o">/</span><span class="n">versions</span><span class="o">/</span><span class="mf">5.3.8</span>
-<span class="n">Loaded</span> <span class="n">pyrus</span> <span class="n">Plugin</span><span class="p">.</span>
-<span class="n">Loaded</span> <span class="n">xdebug</span> <span class="n">Plugin</span><span class="p">.</span>
-<span class="n">php</span><span class="p">.</span><span class="n">ini</span><span class="o">-</span><span class="n">production</span> <span class="n">gets</span> <span class="n">used</span> <span class="n">as</span> <span class="n">php</span><span class="p">.</span><span class="n">ini</span>
+<div class="highlight"><pre><span class="nv">$ </span>php-build 5.3.8 ~/.phpenv/versions/5.3.8
+Loaded pyrus Plugin.
+Loaded xdebug Plugin.
+php.ini-production gets used as php.ini
 
-<span class="n">Building</span> <span class="mf">5.3.8</span> <span class="n">into</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">dataich</span><span class="o">/</span><span class="p">.</span><span class="n">phpenv</span><span class="o">/</span><span class="n">versions</span><span class="o">/</span><span class="mf">5.3.8</span>
+Building 5.3.8 into /Users/dataich/.phpenv/versions/5.3.8
 
-<span class="p">[</span><span class="n">Downloading</span><span class="p">]</span><span class="o">:</span> <span class="n">http</span><span class="o">:</span><span class="c1">//www.php.net/distributions/php-5.3.8.tar.bz2</span>
-<span class="p">[</span><span class="n">Configure</span><span class="p">]</span><span class="o">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">php</span><span class="o">-</span><span class="n">build</span><span class="o">/</span><span class="n">source</span><span class="o">/</span><span class="mf">5.3.8</span>
-<span class="p">[</span><span class="n">Make</span><span class="p">]</span><span class="o">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">php</span><span class="o">-</span><span class="n">build</span><span class="o">/</span><span class="n">source</span><span class="o">/</span><span class="mf">5.3.8</span>
-<span class="p">[</span><span class="n">Pyrus</span><span class="p">]</span><span class="o">:</span> <span class="n">Downloading</span> <span class="n">from</span> <span class="n">http</span><span class="o">:</span><span class="c1">//pear2.php.net/pyrus.phar</span>
-<span class="p">[</span><span class="n">Pyrus</span><span class="p">]</span><span class="o">:</span> <span class="n">Installing</span> <span class="n">executable</span> <span class="n">in</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">dataich</span><span class="o">/</span><span class="p">.</span><span class="n">phpenv</span><span class="o">/</span><span class="n">versions</span><span class="o">/</span><span class="mf">5.3.8</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">pyrus</span>
-<span class="p">[</span><span class="n">XDebug</span><span class="p">]</span><span class="o">:</span> <span class="n">Downloading</span> <span class="n">http</span><span class="o">:</span><span class="c1">//xdebug.org/files/xdebug-2.1.2.tgz</span>
-<span class="p">[</span><span class="n">XDebug</span><span class="p">]</span><span class="o">:</span> <span class="n">Compiling</span> <span class="n">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">php</span><span class="o">-</span><span class="n">build</span><span class="o">/</span><span class="n">source</span><span class="o">/</span><span class="n">xdebug</span><span class="o">-</span><span class="mf">2.1.2</span>
-<span class="p">[</span><span class="n">XDebug</span><span class="p">]</span><span class="o">:</span> <span class="n">Installing</span> <span class="n">XDebug</span> <span class="n">configuration</span> <span class="n">in</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">dataich</span><span class="o">/</span><span class="p">.</span><span class="n">phpenv</span><span class="o">/</span><span class="n">versions</span><span class="o">/</span><span class="mf">5.3.8</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">conf</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">xdebug</span><span class="p">.</span><span class="n">ini</span>
-<span class="p">[</span><span class="n">XDebug</span><span class="p">]</span><span class="o">:</span> <span class="n">Cleaning</span> <span class="n">up</span><span class="p">.</span>
-<span class="p">[</span><span class="n">Info</span><span class="p">]</span><span class="o">:</span> <span class="n">The</span> <span class="n">Log</span> <span class="n">File</span> <span class="n">is</span> <span class="n">not</span> <span class="n">empty</span><span class="p">,</span> <span class="n">but</span> <span class="n">the</span> <span class="n">Build</span> <span class="n">did</span> <span class="n">not</span> <span class="n">fail</span><span class="p">.</span> <span class="n">Maybe</span> <span class="n">just</span> <span class="n">warnings</span> <span class="n">got</span> <span class="n">logged</span><span class="p">.</span> <span class="n">You</span> <span class="n">can</span> <span class="n">review</span> <span class="n">the</span> <span class="n">log</span> <span class="n">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">php</span><span class="o">-</span><span class="n">build</span><span class="o">/</span><span class="n">error</span><span class="mf">.5.3.8.20120106174319</span><span class="p">.</span><span class="n">log</span>
-<span class="p">[</span><span class="n">Success</span><span class="p">]</span><span class="o">:</span> <span class="n">Built</span> <span class="mf">5.3.8</span> <span class="n">successfully</span><span class="p">.</span>
+<span class="o">[</span>Downloading<span class="o">]</span>: http://www.php.net/distributions/php-5.3.8.tar.bz2
+<span class="o">[</span>Configure<span class="o">]</span>: /usr/local/bin/../tmp/php-build/source/5.3.8
+<span class="o">[</span>Make<span class="o">]</span>: /usr/local/bin/../tmp/php-build/source/5.3.8
+<span class="o">[</span>Pyrus<span class="o">]</span>: Downloading from http://pear2.php.net/pyrus.phar
+<span class="o">[</span>Pyrus<span class="o">]</span>: Installing executable in /Users/dataich/.phpenv/versions/5.3.8/bin/pyrus
+<span class="o">[</span>XDebug<span class="o">]</span>: Downloading http://xdebug.org/files/xdebug-2.1.2.tgz
+<span class="o">[</span>XDebug<span class="o">]</span>: Compiling in /usr/local/bin/../tmp/php-build/source/xdebug-2.1.2
+<span class="o">[</span>XDebug<span class="o">]</span>: Installing XDebug configuration in /Users/dataich/.phpenv/versions/5.3.8/etc/conf.d/xdebug.ini
+<span class="o">[</span>XDebug<span class="o">]</span>: Cleaning up.
+<span class="o">[</span>Info<span class="o">]</span>: The Log File is not empty, but the Build did not fail. Maybe just warnings got logged. You can review the log in /usr/local/bin/../var/log/php-build/error.5.3.8.20120106174319.log
+<span class="o">[</span>Success<span class="o">]</span>: Built 5.3.8 successfully.
 </pre></div>
 
 
@@ -160,69 +160,69 @@
 xdebug.iniなどが置いてあります。バージョンごとにiniファイルを持っているので便利です。</p>
 <h2>phpenvを使ってみる</h2>
 <p>ではphpenvにて切り替えられるバージョンを調べてみます。</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">phpenv</span> <span class="n">versions</span>
-<span class="mf">5.3.8</span>
+<div class="highlight"><pre><span class="nv">$ </span>phpenv versions
+5.3.8
 </pre></div>
 
 
 <p>先ほどインスールした5.3.8が使用できる状態になっていますので、グローバルに使うようにします。</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">phpenv</span> <span class="n">global</span> <span class="mf">5.3.8</span>
-<span class="err">$</span> <span class="n">phpenv</span> <span class="n">versions</span>
-<span class="o">*</span> <span class="mf">5.3.8</span> <span class="p">(</span><span class="n">set</span> <span class="n">by</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">dataich</span><span class="o">/</span><span class="p">.</span><span class="n">rbenv</span><span class="o">-</span><span class="n">version</span><span class="p">)</span>
-<span class="err">$</span> <span class="n">php</span> <span class="o">-</span><span class="n">v</span>
-<span class="n">PHP</span> <span class="mf">5.3.8</span> <span class="p">(</span><span class="n">cli</span><span class="p">)</span> <span class="p">(</span><span class="n">built</span><span class="o">:</span> <span class="n">Jan</span> <span class="mi">11</span> <span class="mi">2012</span> <span class="mi">23</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">46</span><span class="p">)</span>
-<span class="n">Copyright</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="mi">1997</span><span class="o">-</span><span class="mi">2011</span> <span class="n">The</span> <span class="n">PHP</span> <span class="n">Group</span>
-<span class="n">Zend</span> <span class="n">Engine</span> <span class="n">v2</span><span class="mf">.3.0</span><span class="p">,</span> <span class="n">Copyright</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="mi">1998</span><span class="o">-</span><span class="mi">2011</span> <span class="n">Zend</span> <span class="n">Technologies</span>
-<span class="n">with</span> <span class="n">Xdebug</span> <span class="n">v2</span><span class="mf">.1.2</span><span class="p">,</span> <span class="n">Copyright</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="mi">2002</span><span class="o">-</span><span class="mi">2011</span><span class="p">,</span> <span class="n">by</span> <span class="n">Derick</span> <span class="n">Rethans</span>
+<div class="highlight"><pre><span class="nv">$ </span>phpenv global 5.3.8
+<span class="nv">$ </span>phpenv versions
+* 5.3.8 <span class="o">(</span><span class="nb">set </span>by /Users/dataich/.rbenv-version<span class="o">)</span>
+<span class="nv">$ </span>php -v
+PHP 5.3.8 <span class="o">(</span>cli<span class="o">)</span> <span class="o">(</span>built: Jan <span class="m">11</span> <span class="m">2012</span> 23:20:46<span class="o">)</span>
+Copyright <span class="o">(</span>c<span class="o">)</span> 1997-2011 The PHP Group
+Zend Engine v2.3.0, Copyright <span class="o">(</span>c<span class="o">)</span> 1998-2011 Zend Technologies
+with Xdebug v2.1.2, Copyright <span class="o">(</span>c<span class="o">)</span> 2002-2011, by Derick Rethans
 </pre></div>
 
 
 <p>また、下記のようにlocalを使うとカレントディレクトリに.rbenv-versionというファイルが作られ、そのディレクトリ配下では一度指定したバージョンが使われるようになります。</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">phpenv</span> <span class="n">local</span> <span class="mf">5.4</span><span class="n">snapshot</span>
+<div class="highlight"><pre><span class="nv">$ </span>phpenv <span class="nb">local </span>5.4snapshot
 </pre></div>
 
 
 <h2>phpenv rehashコマンド</h2>
 <p>phpenvでは.phpenv/shims/にパスを通すようになっており、そこを介してexecutableなコマンドを実行したりします。</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">ll</span> <span class="p">.</span><span class="n">phpenv</span><span class="o">/</span><span class="n">shims</span>
+<div class="highlight"><pre><span class="nv">$ </span>ll .phpenv/shims
 </pre></div>
 
 
 <p>何もないはずです。ここを構築するにはrehashを使います。</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">phpenv</span> <span class="n">rehash</span>
-<span class="err">$</span> <span class="n">ll</span> <span class="p">.</span><span class="n">phpenv</span><span class="o">/</span><span class="n">shims</span><span class="o">/</span>
-<span class="n">total</span> <span class="mi">56</span>
-<span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">7</span> <span class="n">dataich</span> <span class="n">staff</span> <span class="mi">102</span> <span class="mi">1</span> <span class="mi">11</span> <span class="mi">23</span><span class="o">:</span><span class="mi">31</span> <span class="n">phar</span>
-<span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">7</span> <span class="n">dataich</span> <span class="n">staff</span> <span class="mi">102</span> <span class="mi">1</span> <span class="mi">11</span> <span class="mi">23</span><span class="o">:</span><span class="mi">31</span> <span class="n">phar</span><span class="p">.</span><span class="n">phar</span>
-<span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">7</span> <span class="n">dataich</span> <span class="n">staff</span> <span class="mi">102</span> <span class="mi">1</span> <span class="mi">11</span> <span class="mi">23</span><span class="o">:</span><span class="mi">31</span> <span class="n">php</span>
-<span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">7</span> <span class="n">dataich</span> <span class="n">staff</span> <span class="mi">102</span> <span class="mi">1</span> <span class="mi">11</span> <span class="mi">23</span><span class="o">:</span><span class="mi">31</span> <span class="n">php</span><span class="o">-</span><span class="n">config</span>
-<span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">7</span> <span class="n">dataich</span> <span class="n">staff</span> <span class="mi">102</span> <span class="mi">1</span> <span class="mi">11</span> <span class="mi">23</span><span class="o">:</span><span class="mi">31</span> <span class="n">phpize</span>
-<span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">7</span> <span class="n">dataich</span> <span class="n">staff</span> <span class="mi">102</span> <span class="mi">1</span> <span class="mi">11</span> <span class="mi">23</span><span class="o">:</span><span class="mi">31</span> <span class="n">pyrus</span>
-<span class="o">-</span><span class="n">rwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span> <span class="mi">7</span> <span class="n">dataich</span> <span class="n">staff</span> <span class="mi">102</span> <span class="mi">1</span> <span class="mi">11</span> <span class="mi">23</span><span class="o">:</span><span class="mi">31</span> <span class="n">pyrus</span><span class="p">.</span><span class="n">phar</span>
+<div class="highlight"><pre><span class="nv">$ </span>phpenv rehash
+<span class="nv">$ </span>ll .phpenv/shims/
+total 56
+-rwxr-xr-x <span class="m">7</span> dataich staff <span class="m">102</span> <span class="m">1</span> <span class="m">11</span> 23:31 phar
+-rwxr-xr-x <span class="m">7</span> dataich staff <span class="m">102</span> <span class="m">1</span> <span class="m">11</span> 23:31 phar.phar
+-rwxr-xr-x <span class="m">7</span> dataich staff <span class="m">102</span> <span class="m">1</span> <span class="m">11</span> 23:31 php
+-rwxr-xr-x <span class="m">7</span> dataich staff <span class="m">102</span> <span class="m">1</span> <span class="m">11</span> 23:31 php-config
+-rwxr-xr-x <span class="m">7</span> dataich staff <span class="m">102</span> <span class="m">1</span> <span class="m">11</span> 23:31 phpize
+-rwxr-xr-x <span class="m">7</span> dataich staff <span class="m">102</span> <span class="m">1</span> <span class="m">11</span> 23:31 pyrus
+-rwxr-xr-x <span class="m">7</span> dataich staff <span class="m">102</span> <span class="m">1</span> <span class="m">11</span> 23:31 pyrus.phar
 </pre></div>
 
 
 <p>これを実行することでインストールされているPHPやPEARモジュールの実体を探してきて、シムリンクぽいシェルスクリプトが作成されます。新しいバージョンのPHPや、phpunitなどの実行モジュールをインストールした後には実行しておきましょう。</p>
 <h2>Pyrus</h2>
 <p>で次にPyrusです。PEARの後継にあたるパッケージマネージャです。使ってみます。php-buildでインストールした際に既に使えるようになっています。</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">pyrus</span> <span class="n">config</span><span class="o">-</span><span class="n">show</span>
-<span class="n">Pyrus</span> <span class="n">version</span> <span class="mf">2.0.0</span><span class="n">a3</span> <span class="n">SHA</span><span class="o">-</span><span class="mi">1</span><span class="o">:</span> <span class="n">BE7EA9D171AE3873F1BBAF692EEE9165BB14BD5D</span>
-<span class="n">Using</span> <span class="n">PEAR</span> <span class="n">installation</span> <span class="n">found</span> <span class="n">at</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">dataich</span><span class="o">/</span><span class="p">.</span><span class="n">phpenv</span><span class="o">/</span><span class="n">versions</span><span class="o">/</span><span class="mf">5.3.8</span><span class="o">/</span><span class="n">pyrus</span>
-<span class="n">System</span> <span class="n">paths</span><span class="o">:</span>
-<span class="n">php_dir</span> <span class="o">=&gt;</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">dataich</span><span class="o">/</span><span class="p">.</span><span class="n">phpenv</span><span class="o">/</span><span class="n">versions</span><span class="o">/</span><span class="mf">5.3.8</span><span class="o">/</span><span class="n">pyrus</span><span class="o">/</span><span class="n">php</span>
-<span class="n">ext_dir</span> <span class="o">=&gt;</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">dataich</span><span class="o">/</span><span class="p">.</span><span class="n">phpenv</span><span class="o">/</span><span class="n">versions</span><span class="o">/</span><span class="mf">5.3.8</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">php</span><span class="o">/</span><span class="n">extensions</span><span class="o">/</span><span class="n">no</span><span class="o">-</span><span class="n">debug</span><span class="o">-</span><span class="n">non</span><span class="o">-</span><span class="n">zts</span><span class="o">-</span><span class="mi">20090626</span>
-<span class="n">cfg_dir</span> <span class="o">=&gt;</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">dataich</span><span class="o">/</span><span class="p">.</span><span class="n">phpenv</span><span class="o">/</span><span class="n">versions</span><span class="o">/</span><span class="mf">5.3.8</span><span class="o">/</span><span class="n">pyrus</span><span class="o">/</span><span class="n">cfg</span>
-<span class="n">doc_dir</span> <span class="o">=&gt;</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">dataich</span><span class="o">/</span><span class="p">.</span><span class="n">phpenv</span><span class="o">/</span><span class="n">versions</span><span class="o">/</span><span class="mf">5.3.8</span><span class="o">/</span><span class="n">pyrus</span><span class="o">/</span><span class="n">docs</span>
-<span class="n">bin_dir</span> <span class="o">=&gt;</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">dataich</span><span class="o">/</span><span class="p">.</span><span class="n">phpenv</span><span class="o">/</span><span class="n">versions</span><span class="o">/</span><span class="mf">5.3.8</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span>
-<span class="n">data_dir</span> <span class="o">=&gt;</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">dataich</span><span class="o">/</span><span class="p">.</span><span class="n">phpenv</span><span class="o">/</span><span class="n">versions</span><span class="o">/</span><span class="mf">5.3.8</span><span class="o">/</span><span class="n">pyrus</span><span class="o">/</span><span class="n">data</span>
-<span class="n">www_dir</span> <span class="o">=&gt;</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">dataich</span><span class="o">/</span><span class="p">.</span><span class="n">phpenv</span><span class="o">/</span><span class="n">versions</span><span class="o">/</span><span class="mf">5.3.8</span><span class="o">/</span><span class="n">pyrus</span><span class="o">/</span><span class="n">www</span>
-<span class="n">test_dir</span> <span class="o">=&gt;</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">dataich</span><span class="o">/</span><span class="p">.</span><span class="n">phpenv</span><span class="o">/</span><span class="n">versions</span><span class="o">/</span><span class="mf">5.3.8</span><span class="o">/</span><span class="n">pyrus</span><span class="o">/</span><span class="n">tests</span>
-<span class="n">src_dir</span> <span class="o">=&gt;</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">dataich</span><span class="o">/</span><span class="p">.</span><span class="n">phpenv</span><span class="o">/</span><span class="n">versions</span><span class="o">/</span><span class="mf">5.3.8</span><span class="o">/</span><span class="n">pyrus</span><span class="o">/</span><span class="n">src</span>
-<span class="n">php_bin</span> <span class="o">=&gt;</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">dataich</span><span class="o">/</span><span class="p">.</span><span class="n">phpenv</span><span class="o">/</span><span class="n">versions</span><span class="o">/</span><span class="mf">5.3.8</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">php</span>
-<span class="n">php_ini</span> <span class="o">=&gt;</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">dataich</span><span class="o">/</span><span class="p">.</span><span class="n">phpenv</span><span class="o">/</span><span class="n">versions</span><span class="o">/</span><span class="mf">5.3.8</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">php</span><span class="p">.</span><span class="n">ini</span>
-<span class="n">php_prefix</span> <span class="o">=&gt;</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">dataich</span><span class="o">/</span><span class="p">.</span><span class="n">phpenv</span><span class="o">/</span><span class="n">versions</span><span class="o">/</span><span class="mf">5.3.8</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span>
-<span class="n">php_suffix</span> <span class="o">=&gt;</span>
-<span class="p">...</span>
+<div class="highlight"><pre><span class="nv">$ </span>pyrus config-show
+Pyrus version 2.0.0a3 SHA-1: BE7EA9D171AE3873F1BBAF692EEE9165BB14BD5D
+Using PEAR installation found at /Users/dataich/.phpenv/versions/5.3.8/pyrus
+System paths:
+<span class="nv">php_dir</span> <span class="o">=</span>&gt; /Users/dataich/.phpenv/versions/5.3.8/pyrus/php
+<span class="nv">ext_dir</span> <span class="o">=</span>&gt; /Users/dataich/.phpenv/versions/5.3.8/lib/php/extensions/no-debug-non-zts-20090626
+<span class="nv">cfg_dir</span> <span class="o">=</span>&gt; /Users/dataich/.phpenv/versions/5.3.8/pyrus/cfg
+<span class="nv">doc_dir</span> <span class="o">=</span>&gt; /Users/dataich/.phpenv/versions/5.3.8/pyrus/docs
+<span class="nv">bin_dir</span> <span class="o">=</span>&gt; /Users/dataich/.phpenv/versions/5.3.8/bin/
+<span class="nv">data_dir</span> <span class="o">=</span>&gt; /Users/dataich/.phpenv/versions/5.3.8/pyrus/data
+<span class="nv">www_dir</span> <span class="o">=</span>&gt; /Users/dataich/.phpenv/versions/5.3.8/pyrus/www
+<span class="nv">test_dir</span> <span class="o">=</span>&gt; /Users/dataich/.phpenv/versions/5.3.8/pyrus/tests
+<span class="nv">src_dir</span> <span class="o">=</span>&gt; /Users/dataich/.phpenv/versions/5.3.8/pyrus/src
+<span class="nv">php_bin</span> <span class="o">=</span>&gt; /Users/dataich/.phpenv/versions/5.3.8/bin/php
+<span class="nv">php_ini</span> <span class="o">=</span>&gt; /Users/dataich/.phpenv/versions/5.3.8/etc/php.ini
+<span class="nv">php_prefix</span> <span class="o">=</span>&gt; /Users/dataich/.phpenv/versions/5.3.8/bin/
+<span class="nv">php_suffix</span> <span class="o">=</span>&gt;
+...
 </pre></div>
 
 

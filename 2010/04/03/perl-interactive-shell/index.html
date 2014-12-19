@@ -53,7 +53,7 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2010-04-03T00:00:00" pubdate>
+                        <time class="post-time" datetime="2010-04-03T00:00:00+09:00" pubdate>
                             2010/04/03
                         </time>
                         <a href="http://blog.dataich.com/2010/04/03/perl-interactive-shell" rel="bookmark"><h1>Perlでインタラクティブシェル</h1></a>
@@ -61,13 +61,13 @@
 
                     <section class="post-content">
                         <p>Ruby、Python等の言語にはインタラクティブシェルが付いてます。Perlでは<a href="http://search.cpan.org/~dhouston/Devel-REPL-1.003009/lib/Devel/REPL.pm">Devel::REPL</a>というモジュールをインストールすることで実現できます。（作者様には感謝です。）書くまでもないのですが、インストールにはcpanを使用します。（当方環境はMac OS X 10.6及び、Perl5.10）</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">sudo</span> <span class="n">cpan</span>
-<span class="n">cpan</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;</span> <span class="n">install</span> <span class="n">Devel</span><span class="o">::</span><span class="n">REPL</span>
+<div class="highlight"><pre><span class="nv">$ </span>sudo cpan
+cpan<span class="o">[</span>1<span class="o">]</span>&gt; install Devel::REPL
 </pre></div>
 
 
 <p>インタラクティブシェルの起動には下記Perlを実行します。</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">re</span><span class="p">.</span><span class="n">pl</span>
+<div class="highlight"><pre><span class="nv">$ </span>re.pl
 </pre></div>
 
 

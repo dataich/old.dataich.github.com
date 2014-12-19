@@ -53,7 +53,7 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2008-03-19T00:00:00" pubdate>
+                        <time class="post-time" datetime="2008-03-19T00:00:00+09:00" pubdate>
                             2008/03/19
                         </time>
                         <a href="http://blog.dataich.com/2008/03/19/mysqldump-blob" rel="bookmark"><h1>mysqldumpでのBLOB項目</h1></a>
@@ -61,7 +61,7 @@
 
                     <section class="post-content">
                         <p>mysqldumpに--hex-blobオプションをつけてやることで、BLOBカラムがHEX出力される。</p>
-<div class="highlight"><pre><span class="n">mysqldump</span> <span class="o">--</span><span class="n">hex</span><span class="o">-</span><span class="n">blob</span> <span class="o">-</span><span class="n">u</span> <span class="err">ユーザ</span> <span class="o">-</span><span class="n">p</span> <span class="err">データベース名</span> <span class="o">&gt;</span> <span class="err">出力ファイルパス</span>
+<div class="highlight"><pre>mysqldump --hex-blob -u ユーザ -p データベース名 &gt; 出力ファイルパス
 </pre></div>
                     </section>
                     <hr/>

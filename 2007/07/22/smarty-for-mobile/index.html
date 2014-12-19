@@ -53,7 +53,7 @@
             <li>
                 <article class="post-entry">
                     <header class="entry-header">
-                        <time class="post-time" datetime="2007-07-22T00:00:00" pubdate>
+                        <time class="post-time" datetime="2007-07-22T00:00:00+09:00" pubdate>
                             2007/07/22
                         </time>
                         <a href="http://blog.dataich.com/2007/07/22/smarty-for-mobile" rel="bookmark"><h1>Smartyを携帯向けに</h1></a>
@@ -62,18 +62,18 @@
                     <section class="post-content">
                         <p>Smartyを携帯に対応させようとすると、どうしてもSJISの問題が発生する。「{」「}」がSJISのコードに含まれるため、テンプレートはSJISでは書けない。
 そこで、Smartyの<a  href="http://smarty.php.net/manual/ja/advanced.features.outputfilters.php" target="_blank">outputfilter</a>を使用した。</p>
-<div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight"><pre><span class="cp">&lt;?php</span>
 <span class="c1">//</span>
 <span class="c1">// 画面出力時に、テンプレートをUTF-8からSJISに変換する。</span>
 <span class="c1">//</span>
-<span class="kd">function</span> <span class="nx">filterUTF8ToSJIS</span><span class="p">(</span><span class="nx">$buff</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">$smarty</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">mb_convert_encoding</span><span class="p">(</span><span class="nx">$buff</span><span class="p">,</span><span class="s2">&quot;SJIS&quot;</span><span class="p">,</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">);</span>
+<span class="k">function</span> <span class="nf">filterUTF8ToSJIS</span><span class="p">(</span><span class="nv">$buff</span><span class="p">,</span> <span class="o">&amp;</span><span class="nv">$smarty</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">mb_convert_encoding</span><span class="p">(</span><span class="nv">$buff</span><span class="p">,</span><span class="s2">&quot;SJIS&quot;</span><span class="p">,</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="nx">$smarty</span><span class="o">=</span> <span class="k">new</span> <span class="nx">Smarty</span><span class="p">();</span>                              <span class="c1">//Smartyオブジェクト生成</span>
-<span class="nx">$smarty</span><span class="o">-&gt;</span><span class="nx">register_outputfilter</span><span class="p">(</span><span class="s2">&quot;filterUTF8ToSJIS&quot;</span><span class="p">);</span> <span class="c1">//フィルターの登録</span>
-<span class="nx">ini_set</span><span class="p">(</span><span class="s2">&quot;default_charset&quot;</span><span class="p">,</span> <span class="s2">&quot;Shift_JIS&quot;</span><span class="p">);</span>            <span class="c1">//PHPの設定default_charsetにSJISを設定</span>
-<span class="o">?&gt;</span>
+<span class="nv">$smarty</span><span class="o">=</span> <span class="k">new</span> <span class="nx">Smarty</span><span class="p">();</span>                              <span class="c1">//Smartyオブジェクト生成</span>
+<span class="nv">$smarty</span><span class="o">-&gt;</span><span class="na">register_outputfilter</span><span class="p">(</span><span class="s2">&quot;filterUTF8ToSJIS&quot;</span><span class="p">);</span> <span class="c1">//フィルターの登録</span>
+<span class="nb">ini_set</span><span class="p">(</span><span class="s2">&quot;default_charset&quot;</span><span class="p">,</span> <span class="s2">&quot;Shift_JIS&quot;</span><span class="p">);</span>            <span class="c1">//PHPの設定default_charsetにSJISを設定</span>
+<span class="cp">?&gt;</span>
 </pre></div>
                     </section>
                     <hr/>
