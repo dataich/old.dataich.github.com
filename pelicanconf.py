@@ -33,7 +33,7 @@ AUTHORS_SAVE_AS = False
 CATEGORIES_SAVE_AS = False
 TAGS_SAVE_AS = False
 
-THEME = 'pelican-themes/pelican-cait'
+THEME = 'pelican-cait'
 
 USE_CUSTOM_MENU = True
 CUSTOM_MENUITEMS = (
