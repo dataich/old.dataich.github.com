@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Cap'n webb</title><link href="http://blog.dataich.com/" rel="alternate"></link><link href="http://blog.dataich.com/feeds/dataich.atom.xml" rel="self"></link><id>http://blog.dataich.com/</id><updated>2014-07-19T11:20:00+09:00</updated><entry><title>「ぺちぱな。Q 〜たまには決められた通りに繰り返すのもいい〜」を開催しました</title><link href="http://blog.dataich.com/2014/07/19/phper-na-9th" rel="alternate"></link><updated>2014-07-19T11:20:00+09:00</updated><author><name>dataich</name></author><id>tag:blog.dataich.com,2014-07-19:2014/07/19/phper-na-9th</id><summary type="html">&lt;blockquote&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Cap'n webb</title><link href="http://blog.dataich.com/" rel="alternate"></link><link href="http://blog.dataich.com/feeds/dataich.atom.xml" rel="self"></link><id>http://blog.dataich.com/</id><updated>2015-02-21T11:20:00+09:00</updated><entry><title>「ぺちぱな。延長戦 〜あの人たちが居なくなるその前に〜」を開催しました</title><link href="http://blog.dataich.com/2015/02/21/phper-na-11th" rel="alternate"></link><updated>2015-02-21T11:20:00+09:00</updated><author><name>dataich</name></author><id>tag:blog.dataich.com,2015-02-21:2015/02/21/phper-na-11th</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="https://atnd.org/events/62323"&gt;ぺちぱな。延長戦 〜あの人たちが居なくなるその前に〜&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;10回で一区切り、、、と思いきや延長戦11回目開催しました。&lt;/p&gt;
+&lt;h2&gt;ノベルゲームが出来るまでに2人でやったこと by &lt;a href="https://twitter.com/eccyun"&gt;@eccyun&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;ひとつめはeccyun氏によるお話。会社の仕事の傍ら、サウンドノベルゲーム「&lt;a href="http://aohige.me/leap/"&gt;Leap 〜ときをこえて〜&lt;/a&gt;」をリリースするまでの山あり谷ありマルチ⚪︎⚪︎ありのお話。プライベートワークならではの仕事の進まなさにだいぶ苦労してた様子が伺えました。最終的にはリリースできたからよかったものの、できてなかったら笑い話にできないんだろうな。。。ともあれお疲れさまでした！&lt;/p&gt;
+&lt;p&gt;&lt;img alt="@eccyun" src="https://dl.dropboxusercontent.com/u/126064/blog.dataich.com.images/phper-na-11th-01.jpg" /&gt;&lt;/p&gt;
+&lt;h2&gt;プロジェクト運用にNulabサービスを使うとこうなる by &lt;a href="https://twitter.com/dataich"&gt;@dataich&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;ふたつめは私からヌーラボのサービスについてのお話。&lt;br /&gt;
+転職エントリは書いてなかったですが、昨年10月からヌーラボにて仕事しています。もちろんヌーラボの社員もサービス使い倒しているわけですが、その中で各サービスを連携して使いやすかった部分などを紹介しました。&lt;br /&gt;
+また最後はTypetalkからJenkinsにビルド指示、fastlaneを使ってCrashlyticsでベータアプリ配信というデモをやりました。若干トラブルあったりしましたが、ちゃんとiOSデバイス上にアプリの更新通知が来るところはお見せできました！&lt;br /&gt;
+まり長くここに書くのもあれなので、このくらいで。&lt;/p&gt;
+&lt;h2&gt;長崎とコミュニテイと私 by &lt;a href="https://twitter.com/hideAki76"&gt;@hideAki76&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;最後はhideAki76氏による自身の来歴的なお話、長崎のコミュニティの変遷のお話など。いろいろ自分のマインドにも通じる部分があって大変共感できました。&lt;br /&gt;
+また過去の長崎のコミュニティの写真などが出てきたりして、非常に懐かしい気分に浸れました。 en.という団体をやってらっしゃいます、何かイベントやってみたい！という方がいらっしゃいましたら、相談するといろいろと捗ると思います！&lt;/p&gt;
+&lt;p&gt;&lt;img alt="@hideAki76" src="https://dl.dropboxusercontent.com/u/126064/blog.dataich.com.images/phper-na-11th-02.jpg" /&gt;&lt;/p&gt;
+&lt;h2&gt;締めのお言葉 by &lt;a href="https://twitter.com/tactactad"&gt;@tactactad&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;tactactad氏による締めのお言葉。ぺちぱなの始まりから今日まで、全部振り返ってくれました。11回も続けてこれたのは間違いなくこの人の功績。ありがとう。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="@tactactad" src="https://dl.dropboxusercontent.com/u/126064/blog.dataich.com.images/phper-na-11th-03.jpg" /&gt;&lt;/p&gt;
+&lt;h2&gt;最後に&lt;/h2&gt;
+&lt;p&gt;私が長崎にいる間のぺちぱなはこれで最後になりました。名前はこのままかどうかは置いといて、ずっと続けてもらえれば本当に嬉しい。毎回は来れないと思いますが、長崎には度々帰ってくると思うので、その時は是非参加させてください。&lt;br /&gt;
+tactactadさん、hideAki76さん、eccyunくん、三人は僕にとって特別な存在です、ありがとう！&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://dl.dropboxusercontent.com/u/126064/blog.dataich.com.images/phper-na-11th-04.jpg" /&gt;&lt;/p&gt;</summary></entry><entry><title>「ぺちぱな。Q 〜たまには決められた通りに繰り返すのもいい〜」を開催しました</title><link href="http://blog.dataich.com/2014/07/19/phper-na-9th" rel="alternate"></link><updated>2014-07-19T11:20:00+09:00</updated><author><name>dataich</name></author><id>tag:blog.dataich.com,2014-07-19:2014/07/19/phper-na-9th</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;a href="https://atnd.org/events/53496"&gt;ぺちぱな。Q 〜たまには決められた通りに繰り返すのもいい〜&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;今回は&lt;a href="https://twitter.com/eccyun"&gt;@eccyun&lt;/a&gt;氏によるenchant.jsを使ったゲームプログラミングのハンズオンを行いました。&lt;/p&gt;
