@@ -9,7 +9,7 @@ OUTPUT_PATH = '.'
 
 AUTHOR = 'dataich'
 SITENAME = "Cap'n webb"
-SITEURL = 'http://blog.dataich.com'
+SITEURL = 'http://dataich.github.io'
 #SITEURL = 'http://localhost:8000'
 TIMEZONE = 'Asia/Tokyo'
 DEFAULT_LANG = 'ja'
