@@ -1,7 +1,7 @@
 Title: LiveDiag 1.1.0 をリリースしました
 Date: 2013-08-06 21:39
 
-> [LiveDiag by dataich](http://blog.dataich.com/LiveDiag/)
+> [LiveDiag by dataich](http://dataich.github.io/LiveDiag/)
 
 ## 変更点
 

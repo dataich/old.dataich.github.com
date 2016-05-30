@@ -53,11 +53,11 @@ myproject.appを起動した。
 
 なんかエラーが出るが、
 
-![titanium_error](http://dl.dropbox.com/u/126064/blog.dataich.com.images/titanium_error.jpg)
+![titanium_error](http://dl.dropbox.com/u/126064/dataich.github.io.images/titanium_error.jpg)
 
 無視してクリックするとウィンドウが表示された。
 
-![titanium_sample](http://dl.dropbox.com/u/126064/blog.dataich.com.images/titanium_sample.jpg)
+![titanium_sample](http://dl.dropbox.com/u/126064/dataich.github.io.images/titanium_sample.jpg)
 
 Javascript APIを使ったサンプルがコード付きで試せるので、いろいろと見てみよう。
 但し、上記エラーのせいか、ボタンクリック系のサンプルが動かない、、、

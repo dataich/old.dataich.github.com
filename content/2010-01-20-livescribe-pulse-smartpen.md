@@ -18,48 +18,48 @@ Smartpenの説明はここまでにして、ここからは購入レポートに
 3.  [Livescribe ARA-000008 4 Medium Black and 1 Fine Red Ink Cartridge ](http://www.amazon.com/gp/product/B001AAOZV4/ref=ox_ya_os_product)（$5.95）x 2
 まずはパッケージから。これが1のセットです。
 
-[![](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-package-outside.jpg "livescribe-package-outside")](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-package-outside.jpg)
+[![](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-package-outside.jpg "livescribe-package-outside")](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-package-outside.jpg)
 
 中身はこんな感じです。
 
-[![](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-package-inside.jpg "livescribe-package-inside")](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-package-inside.jpg)
+[![](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-package-inside.jpg "livescribe-package-inside")](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-package-inside.jpg)
 
 2のノートのセット。4冊のセットを購入しました。
 
-[![](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-notebooks.jpg "livescribe-notebooks")](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-notebooks.jpg)
+[![](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-notebooks.jpg "livescribe-notebooks")](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-notebooks.jpg)
 
 3のインクカートリッジ。ブラックx4、レッドx1が2セットで10本です。
 
-[![](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-ink-cartridges.jpg "livescribe-ink-cartridges")](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-ink-cartridges.jpg)
+[![](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-ink-cartridges.jpg "livescribe-ink-cartridges")](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-ink-cartridges.jpg)
 
 セットの中身を紹介します。
 これがSmartpen本体になります。ディスプレイ部にはバッテリー、時計その他のメニューが表示されます。内蔵スピーカー、内蔵マイクも付いています。やはりペンにしては重いですが、すぐに慣れました。頭の部分にはヘッドセットのジャックがあります。
 
-[![](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-smartpen.jpg "livescribe-smartpen")](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-smartpen.jpg)
+[![](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-smartpen.jpg "livescribe-smartpen")](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-smartpen.jpg)
 
 クレードルです。これにSmartpenを置くことで充電、Livescribe Desktopとの同期が可能になります。
 
-[![](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-cradle-whole.jpg "livescribe-cradle-whole")](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-cradle-whole.jpg)
+[![](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-cradle-whole.jpg "livescribe-cradle-whole")](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-cradle-whole.jpg)
 
 置いた状態がこんな感じです。接続は磁石式になっています。
 
-[![](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-smartpen-on-cradle.jpg "livescribe-smartpen-on-cradle")](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-smartpen-on-cradle.jpg)
+[![](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-smartpen-on-cradle.jpg "livescribe-smartpen-on-cradle")](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-smartpen-on-cradle.jpg)
 
 ヘッドセットです。イヤフォンとしてはもちろんですが、イヤフォン背面にマイクが付いており、これを通して録音した場合は、なんと3D録音になります。
 
-[![](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-headset.jpg "livescribe-headset")](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-headset.jpg)
+[![](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-headset.jpg "livescribe-headset")](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-headset.jpg)
 
 ノートも1冊ついてきます。
 
-[![](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-starter-notebook.jpg "livescribe-starter-notebook")](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-starter-notebook.jpg)
+[![](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-starter-notebook.jpg "livescribe-starter-notebook")](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-starter-notebook.jpg)
 
 あとは、Smartpenのカバーと
 
-[![](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-case.jpg "livescribe-case")](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-case.jpg)
+[![](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-case.jpg "livescribe-case")](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-case.jpg)
 
 マニュアルが入っています。
 
-[![](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-manual.jpg "livescribe-manual")](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-manual.jpg)
+[![](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-manual.jpg "livescribe-manual")](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-manual.jpg)
 
 次にSmartpenの使用方法について
 
@@ -68,23 +68,23 @@ Smartpenの説明はここまでにして、ここからは購入レポートに
 これをペン先でタップすることで、録音したり、ペンの設定を変えたりすることができます。
 左下にある十字キーのようなものを使って、Smartpenのディスプレイ部に表示されるメニューを選ぶことができます。
 
-[![](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-dot-paper.jpg "livescribe-dot-paper")](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-dot-paper.jpg)
+[![](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-dot-paper.jpg "livescribe-dot-paper")](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-dot-paper.jpg)
 
 ノートの裏表紙にも様々なツールがあります。計算機、バッテリーの確認、ディスプレイ輝度調整、ボリューム調整など。もちろんノートにボタンが埋め込まれているわけではなく、あくまでペン先のカメラとドットペーパーの座標で機能を認識します。
 
-[![](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-notebook-back-cover.jpg "livescribe-notebook-back-cover")](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-notebook-back-cover.jpg)
+[![](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-notebook-back-cover.jpg "livescribe-notebook-back-cover")](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-notebook-back-cover.jpg)
 
 新しいノートを使用する時には、ノートを閉じているテープ部分をペン先でタップします。これでSmartpenが新しいノートを認識するようです。
 
-[![](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-notebook-tap-point.jpg "livescribe-notebook-tap-point")](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-notebook-tap-point.jpg)
+[![](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-notebook-tap-point.jpg "livescribe-notebook-tap-point")](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-notebook-tap-point.jpg)
 
 実はクレードルにも十字キーがあったので、押して見るとちゃんとメニューを操作できました。クレードルに付いている小さな穴はインクカートリッジを変えるときに使うようです。
 
-[![](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-cradle-close-up.jpg "livescribe-cradle-close-up")](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-cradle-close-up.jpg)
+[![](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-cradle-close-up.jpg "livescribe-cradle-close-up")](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-cradle-close-up.jpg)
 
 これがLivescribe Desktopです。ノートをとって同期すると、このように取り込まれます。ベクターで取り込んでいるようで拡大しても荒れません。ノート部分を見てみると、色が違うところがあります。ここには音声が録音されているという意味でクリックすると再生されます。勘違いするといけないので言っておきますが、もちろん実ノートの該当部分をペン先でタップしても再生されます。
 
-[![](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-desktop.png "livescribe-desktop")](http://dl.dropbox.com/u/126064/blog.dataich.com.images/livescribe-desktop.png)
+[![](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-desktop.png "livescribe-desktop")](http://dl.dropbox.com/u/126064/dataich.github.io.images/livescribe-desktop.png)
 
 またLivescribe DesktopからはWEB上に用意されているスペース（容量制限有り）にアップすることで、共有することができます。PDFとしてダウンロードしたり、Facebookで共有したり、ブログ等にembedすることもできます。
 

@@ -3,7 +3,7 @@ Date: 2013-07-31 22:58
 
 <a href="http://gum.co/RJMM" class="gumroad-button">Dicstory - 辞書を引いた記録を残す</a> <script type="text/javascript" src="https://gumroad.com/js/gumroad.js"></script>
 
-![image](https://dl.dropboxusercontent.com/u/126064/blog.dataich.com.images/DicstoryScreenshot.png)
+![image](https://dl.dropboxusercontent.com/u/126064/dataich.github.io.images/DicstoryScreenshot.png)
 
 辞書の履歴を記録しよう！
 

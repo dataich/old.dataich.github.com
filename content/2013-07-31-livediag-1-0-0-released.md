@@ -26,6 +26,6 @@ NSTaskでのコマンド実行時にどうもユーザの$PATHを読み込んで
 
 ## インストールはこちらから
 
-> [LiveDiag](http://blog.dataich.com/LiveDiag/)
+> [LiveDiag](http://dataich.github.io/LiveDiag/)
 
 是非お使い頂いて、フィードバック頂ければ幸いです。

@@ -27,4 +27,4 @@ EclipseにてFile&gt;New&gt;Projectを選択し、Android&gt;Android Projectを�
 Eclipse上で、プロジェクトを右クリック、Run As&gt;Android Applicationを選択。
 下記のように、エミュレータが起動すれば成功です。
 
-![android](http://dl.dropbox.com/u/126064/blog.dataich.com.images/android.png)
+![android](http://dl.dropbox.com/u/126064/dataich.github.io.images/android.png)

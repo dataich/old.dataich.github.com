@@ -2,7 +2,7 @@ Title: Diibar - Diigoブックマーククライアントをリリースしま�
 
 実は最近ブックマークをほとんど使っていなかったのですが、これじゃいかんということで凍結していたDeliciousアカウントを復活させたりしていたのですが、その過程でしった[Diigo](http://www.diigo.com/)を気に入ってしまいましたのでMac用メニューバー常駐型クライアントを作りました。
 
-[![](http://dl.dropbox.com/u/126064/blog.dataich.com.images/Diibar.png "Diibar")](http://dl.dropbox.com/u/126064/blog.dataich.com.images/Diibar.png)
+[![](http://dl.dropbox.com/u/126064/dataich.github.io.images/Diibar.png "Diibar")](http://dl.dropbox.com/u/126064/dataich.github.io.images/Diibar.png)
 
 機能としてはシンプルでDiigoのブックマークを同期し開くだけなのですが、個人的に特定のサイトはデフォルトでないブラウザで開きたかったりするので、開くブラウザを選ぶこともできるようにしました。自分のアカウントでしかテストしていないので、使ってもらってフィードバック頂けたら幸いです。今回は敢えてMac App Storeは選択しませんでした。[こちら](https://github.com/dataich/Diibar/downloads)からパッケージをダウンロードすることができますのでよろしくお願いします。
 

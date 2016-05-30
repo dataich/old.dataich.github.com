@@ -1,6 +1,6 @@
 Title: Balsamiq Mockups For Desktop
 
-[![Balsamiq Mockups For Desktop](http://dl.dropbox.com/u/126064/blog.dataich.com.images/Balsamiq-Mockups-For-Desktop.png "Balsamiq Mockups For Desktop")](http://dl.dropbox.com/u/126064/blog.dataich.com.images/Balsamiq-Mockups-For-Desktop.png)
+[![Balsamiq Mockups For Desktop](http://dl.dropbox.com/u/126064/dataich.github.io.images/Balsamiq-Mockups-For-Desktop.png "Balsamiq Mockups For Desktop")](http://dl.dropbox.com/u/126064/dataich.github.io.images/Balsamiq-Mockups-For-Desktop.png)
 
 [Balsamiq Mockups For Desktop](http://www.balsamiq.com/products/mockups)
 
@@ -13,7 +13,7 @@ WEBページに必要な手書きパーツが多く用意されていて、ド�
 基本的なパーツはダブルクリックで入力エリアが出てくるのでタイトルを設定したりもできる。
 テーブルパーツでは下記のようにカンマ、改行を入れることでデータを入れることができる。
 
-[![Balsamiq Mockups For Desktop Editing Table Data](http://dl.dropbox.com/u/126064/blog.dataich.com.images/Balsamiq-Mockups-For-Desktop-Editing-Table-Data.png "Balsamiq Mockups For Desktop Editing Table Data")](http://dl.dropbox.com/u/126064/blog.dataich.com.images/Balsamiq-Mockups-For-Desktop-Editing-Table-Data.png)
+[![Balsamiq Mockups For Desktop Editing Table Data](http://dl.dropbox.com/u/126064/dataich.github.io.images/Balsamiq-Mockups-For-Desktop-Editing-Table-Data.png "Balsamiq Mockups For Desktop Editing Table Data")](http://dl.dropbox.com/u/126064/dataich.github.io.images/Balsamiq-Mockups-For-Desktop-Editing-Table-Data.png)
 
 ボタンやリンクパーツには遷移先ページを設定することができ、全画面プレビュー時に動かすことができる。
 これはちょっとしてプレゼンなんかで使えるかもしれない。

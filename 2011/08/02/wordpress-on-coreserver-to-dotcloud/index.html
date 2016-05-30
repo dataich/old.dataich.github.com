@@ -10,17 +10,17 @@
 </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-            <link rel="stylesheet" href="http://blog.dataich.com/theme/css/normalize.css">
+            <link rel="stylesheet" href="http://dataich.github.io/theme/css/normalize.css">
         <link href='//fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="http://blog.dataich.com/theme/css/font-awesome.min.css">
-        <link rel="stylesheet" href="http://blog.dataich.com/theme/css/main.css">
+        <link rel="stylesheet" href="http://dataich.github.io/theme/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://dataich.github.io/theme/css/main.css">
 
-    <link rel="stylesheet" href="http://blog.dataich.com/theme/css/blog.css">
-    <link rel="stylesheet" href="http://blog.dataich.com/theme/css/github.css">
-        <link href="http://blog.dataich.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Cap'n webb Atom Feed" />
-        <script src="http://blog.dataich.com/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    <link rel="stylesheet" href="http://dataich.github.io/theme/css/blog.css">
+    <link rel="stylesheet" href="http://dataich.github.io/theme/css/github.css">
+        <link href="http://dataich.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Cap'n webb Atom Feed" />
+        <script src="http://dataich.github.io/theme/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -30,14 +30,14 @@
         <div id="wrapper">
 <header id="sidebar" class="side-shadow">
     <hgroup id="site-header">
-        <a id="site-title" href="http://blog.dataich.com"><h1><i class="icon-coffee"></i> Cap'n webb</h1></a>
+        <a id="site-title" href="http://dataich.github.io"><h1><i class="icon-coffee"></i> Cap'n webb</h1></a>
         <p id="site-desc"></p>
     </hgroup>
     <nav>
         <ul id="nav-links">
-                <li><a href="http://blog.dataich.com/contact">Contact</a></li>
-                <li><a href="http://blog.dataich.com/dicstory">Dicstory</a></li>
-                <li><a href="http://blog.dataich.com/LiveDiag">LiveDiag</a></li>
+                <li><a href="http://dataich.github.io/contact">Contact</a></li>
+                <li><a href="http://dataich.github.io/dicstory">Dicstory</a></li>
+                <li><a href="http://dataich.github.io/LiveDiag">LiveDiag</a></li>
         </ul>
     </nav>
 <footer id="site-info">
@@ -56,7 +56,7 @@
                         <time class="post-time" datetime="2011-08-02T00:00:00+09:00" pubdate>
                             2011/08/02
                         </time>
-                        <a href="http://blog.dataich.com/2011/08/02/wordpress-on-coreserver-to-dotcloud" rel="bookmark"><h1>CORESERVERからdotCloudにWordpressをお引っ越し</h1></a>
+                        <a href="http://dataich.github.io/2011/08/02/wordpress-on-coreserver-to-dotcloud" rel="bookmark"><h1>CORESERVERからdotCloudにWordpressをお引っ越し</h1></a>
                     </header>
 
                     <section class="post-content">
@@ -75,21 +75,21 @@ Created application <span class="s2">&quot;wordpress&quot;</span>
 
 
 <p>ローカルにディレクトリを作成します。</p>
-<div class="highlight"><pre><span class="nv">$ </span>mkdir blog.dataich.com
+<div class="highlight"><pre><span class="nv">$ </span>mkdir dataich.github.io
 </pre></div>
 
 
 <p>ここにサービスの設定や、ソースコード等を置いていきます。</p>
 <p>Wordpressに必要なサービスPHP、MySQLの設定を行います。dotcloud.ymlに記述します。</p>
-<div class="highlight"><pre><span class="nv">$ </span>vi blog.dataich.com/dotcloud.yml
+<div class="highlight"><pre><span class="nv">$ </span>vi dataich.github.io/dotcloud.yml
 </pre></div>
 
 
 <script src="https://gist.github.com/1119565.js?file=dotcloud.yml"></script>
 
 <p>まずはこの状態で動きを確認してみます。 dotcloud pushコマンドでアプリケーションのソースコード（とはいってもこの段階ではdotcloud.ymlのみ）をPushします。 </p>
-<div class="highlight"><pre><span class="nv">$ </span>dotcloud push wordpress blog.dataich.com
-<span class="c"># upload blog.dataich.com ssh://dotcloud@uploader.dotcloud.com:21122/wordpress</span>
+<div class="highlight"><pre><span class="nv">$ </span>dotcloud push wordpress dataich.github.io
+<span class="c"># upload dataich.github.io ssh://dotcloud@uploader.dotcloud.com:21122/wordpress</span>
 <span class="c"># rsync</span>
 Pseudo-terminal will not be allocated because stdin is not a terminal.
 Warning: Permanently added <span class="s1">&#39;[uploader.dotcloud.com]:21122,[184.73.14.49]:21122&#39;</span> <span class="o">(</span>RSA<span class="o">)</span> to the list of known hosts.
@@ -196,7 +196,7 @@ mysql@wordpress-default-data-0:~<span class="err">$</span>
 <p>アプリケーションのディレクトリにwwwというディレクトリを作り、そこにCORESEVERから持ってきたソースを置きます。</p>
 <p>DBの設定を行うため、wp-config.phpを編集します。
 dotcloudでは/home/dotcloud/environment.jsonに各種サービスの設定が書かれます。それを読むようにしてあげればOKです。</p>
-<div class="highlight"><pre><span class="nv">$ </span>vi blog.dataich.com/www/wp-config.php
+<div class="highlight"><pre><span class="nv">$ </span>vi dataich.github.io/www/wp-config.php
 </pre></div>
 
 
@@ -204,7 +204,7 @@ dotcloudでは/home/dotcloud/environment.jsonに各種サービスの設定が�
 
 <h3>nginxの設定</h3>
 <p>パーマリンク設定をp=123の形から変えている場合は、nginxの設定が必要になります。それにはnginx.confを置いてあげればOKです。 </p>
-<div class="highlight"><pre><span class="nv">$ </span>vi blog.dataich.com/www/nginx.conf
+<div class="highlight"><pre><span class="nv">$ </span>vi dataich.github.io/www/nginx.conf
 </pre></div>
 
 
@@ -212,20 +212,20 @@ dotcloudでは/home/dotcloud/environment.jsonに各種サービスの設定が�
 
 <h3>wp-contentディレクトリの扱い</h3>
 <p>このままだと1回目以降にPushした際にwp-content以下が消えてしまいます。それではまずいので、すでにwp-contentディレクトリが存在する場合は何もしないようにpostinstallスクリプトを書いておきます。（dotcloudのヘルプそのまんま）</p>
-<div class="highlight"><pre><span class="nv">$ </span>vi blog.dataich.com/www/postinstall
+<div class="highlight"><pre><span class="nv">$ </span>vi dataich.github.io/www/postinstall
 </pre></div>
 
 
 <script src="https://gist.github.com/1119572.js?file=postinstall"></script>
 
-<div class="highlight"><pre><span class="nv">$ </span>chmod +x blog.dataich.com/www/postinstall
+<div class="highlight"><pre><span class="nv">$ </span>chmod +x dataich.github.io/www/postinstall
 </pre></div>
 
 
 <h3>dotCloudへWordpressソースをPush</h3>
 <p>これで、動くはず！さあ、Push!!!</p>
-<div class="highlight"><pre><span class="nv">$ </span>dotcloud push wordpress blog.dataich.com
-<span class="c"># upload blog.dataich.com ssh://dotcloud@uploader.dotcloud.com:21122/wordpress</span>
+<div class="highlight"><pre><span class="nv">$ </span>dotcloud push wordpress dataich.github.io
+<span class="c"># upload dataich.github.io ssh://dotcloud@uploader.dotcloud.com:21122/wordpress</span>
 <span class="c"># rsync</span>
 Pseudo-terminal will not be allocated because stdin is not a terminal.
 Warning: Permanently added <span class="s1">&#39;[uploader.dotcloud.com]:21122,[184.73.14.49]:21122&#39;</span> <span class="o">(</span>RSA<span class="o">)</span> to the list of known hosts.
@@ -244,14 +244,14 @@ www: http://xxxxxxxx.dotcloud.com/
 <p>上記、URLに正しくアクセスできました。</p>
 <h3>カスタムドメインの設定</h3>
 <p>まずはdotCloud側を設定します。aliasコマンドを使います。</p>
-<div class="highlight"><pre>dataich:~ dataich$ dotcloud alias add wordpress.www blog.dataich.com
+<div class="highlight"><pre>dataich:~ dataich$ dotcloud alias add wordpress.www dataich.github.io
 Ok. Now please add the following DNS record:
-blog.dataich.com. IN CNAME gateway.dotcloud.com.
+dataich.github.io. IN CNAME gateway.dotcloud.com.
 </pre></div>
 
 
 <p>CNAMEでgateway.dotcloud.com.を設定するように言われるので、VALUE-DOMAIN側のドメイン設定を行います。</p>
-<p><a href="http://blog.dataich.com/">http://blog.dataich.com/</a></p>
+<p><a href="http://dataich.github.io/">http://dataich.github.io/</a></p>
 <p>上記にアクセスし、動作確認。無事当ブログをdotCloudで動かすことに成功しました。
 ざっと確認したところ問題なし。これで暫く運用テストしてみます。</p>
 <p>ここまでやっといてアレなのですが、そう負荷のない個人ブログを運用するにはちょっとお値段が辛いです。
@@ -259,7 +259,7 @@ blog.dataich.com. IN CNAME gateway.dotcloud.com.
                     </section>
                     <hr/>
                     <aside class="post-meta">
-                        <p>Category: <a href="http://blog.dataich.com/category/misc">misc</a></p>
+                        <p>Category: <a href="http://dataich.github.io/category/misc">misc</a></p>
                     </aside>
                     <hr/>
 <div class="comments">
@@ -287,6 +287,6 @@ blog.dataich.com. IN CNAME gateway.dotcloud.com.
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
 </script>
-        <script src="http://blog.dataich.com/theme/js/main.js"></script>
+        <script src="http://dataich.github.io/theme/js/main.js"></script>
     </body>
 </html>

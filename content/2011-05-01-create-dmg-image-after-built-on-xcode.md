@@ -7,7 +7,7 @@ Title: Xcodeでリリースビルド時に.dmgを自動生成する
 
 グループとファイルからビルドターゲットを右クリックし、[追加 &gt; 新規ビルドフェーズ &gt; 新規スクリプトを実行]を選択します。
 
-[![](http://dl.dropbox.com/u/126064/blog.dataich.com.images/new-script.png "new-script")](http://dl.dropbox.com/u/126064/blog.dataich.com.images/new-script.png)
+[![](http://dl.dropbox.com/u/126064/dataich.github.io.images/new-script.png "new-script")](http://dl.dropbox.com/u/126064/dataich.github.io.images/new-script.png)
 
 スクリプトを入力する画面が表示されますので、下記のようにスクリプトを設定します。.dmgはデスクに保存するようにしています。cpしているところは適時置き換えて頂ければいいかと思います。
 

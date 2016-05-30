@@ -20,20 +20,20 @@ dotCloudにアプリケーションを作成します。
 
 ローカルにディレクトリを作成します。
 
-	$ mkdir blog.dataich.com
+	$ mkdir dataich.github.io
 
 ここにサービスの設定や、ソースコード等を置いていきます。
 
 Wordpressに必要なサービスPHP、MySQLの設定を行います。dotcloud.ymlに記述します。
 
-	$ vi blog.dataich.com/dotcloud.yml
+	$ vi dataich.github.io/dotcloud.yml
 
 <script src="https://gist.github.com/1119565.js?file=dotcloud.yml"></script>
 
 まずはこの状態で動きを確認してみます。 dotcloud pushコマンドでアプリケーションのソースコード（とはいってもこの段階ではdotcloud.ymlのみ）をPushします。 
 
-	$ dotcloud push wordpress blog.dataich.com
-	# upload blog.dataich.com ssh://dotcloud@uploader.dotcloud.com:21122/wordpress
+	$ dotcloud push wordpress dataich.github.io
+	# upload dataich.github.io ssh://dotcloud@uploader.dotcloud.com:21122/wordpress
 	# rsync
 	Pseudo-terminal will not be allocated because stdin is not a terminal.
 	Warning: Permanently added '[uploader.dotcloud.com]:21122,[184.73.14.49]:21122' (RSA) to the list of known hosts.
@@ -136,7 +136,7 @@ SSHログインし
 DBの設定を行うため、wp-config.phpを編集します。
 dotcloudでは/home/dotcloud/environment.jsonに各種サービスの設定が書かれます。それを読むようにしてあげればOKです。
 
-	$ vi blog.dataich.com/www/wp-config.php
+	$ vi dataich.github.io/www/wp-config.php
 
 <script src="https://gist.github.com/1119568.js?file=wp-config.php"></script>
 
@@ -144,7 +144,7 @@ dotcloudでは/home/dotcloud/environment.jsonに各種サービスの設定が�
 
 パーマリンク設定をp=123の形から変えている場合は、nginxの設定が必要になります。それにはnginx.confを置いてあげればOKです。 
 
-	$ vi blog.dataich.com/www/nginx.conf
+	$ vi dataich.github.io/www/nginx.conf
 
 <script type="text/javascript" src="https://gist.github.com/1119570.js?file=nginx.conf"></script>
 
@@ -152,18 +152,18 @@ dotcloudでは/home/dotcloud/environment.jsonに各種サービスの設定が�
 
 このままだと1回目以降にPushした際にwp-content以下が消えてしまいます。それではまずいので、すでにwp-contentディレクトリが存在する場合は何もしないようにpostinstallスクリプトを書いておきます。（dotcloudのヘルプそのまんま）
 
-	$ vi blog.dataich.com/www/postinstall
+	$ vi dataich.github.io/www/postinstall
 
 <script src="https://gist.github.com/1119572.js?file=postinstall"></script>
 
-	$ chmod +x blog.dataich.com/www/postinstall
+	$ chmod +x dataich.github.io/www/postinstall
 
 ### dotCloudへWordpressソースをPush
 
 これで、動くはず！さあ、Push!!!
 
-	$ dotcloud push wordpress blog.dataich.com
-	# upload blog.dataich.com ssh://dotcloud@uploader.dotcloud.com:21122/wordpress
+	$ dotcloud push wordpress dataich.github.io
+	# upload dataich.github.io ssh://dotcloud@uploader.dotcloud.com:21122/wordpress
 	# rsync
 	Pseudo-terminal will not be allocated because stdin is not a terminal.
 	Warning: Permanently added '[uploader.dotcloud.com]:21122,[184.73.14.49]:21122' (RSA) to the list of known hosts.
@@ -183,13 +183,13 @@ dotcloudでは/home/dotcloud/environment.jsonに各種サービスの設定が�
 
 まずはdotCloud側を設定します。aliasコマンドを使います。
 
-	dataich:~ dataich$ dotcloud alias add wordpress.www blog.dataich.com
+	dataich:~ dataich$ dotcloud alias add wordpress.www dataich.github.io
 	Ok. Now please add the following DNS record:
-	blog.dataich.com. IN CNAME gateway.dotcloud.com.
+	dataich.github.io. IN CNAME gateway.dotcloud.com.
 
 CNAMEでgateway.dotcloud.com.を設定するように言われるので、VALUE-DOMAIN側のドメイン設定を行います。
 
-[http://blog.dataich.com/](http://blog.dataich.com/)
+[http://dataich.github.io/](http://dataich.github.io/)
 
 上記にアクセスし、動作確認。無事当ブログをdotCloudで動かすことに成功しました。
 ざっと確認したところ問題なし。これで暫く運用テストしてみます。

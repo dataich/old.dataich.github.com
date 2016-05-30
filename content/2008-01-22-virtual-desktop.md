@@ -8,4 +8,4 @@ Title: 仮想デスクトップ
 
 家ではこんな感じでやってます！！
 
-![virtual_desktop](http://dl.dropbox.com/u/126064/blog.dataich.com.images/virtual_desktop.jpg)
+![virtual_desktop](http://dl.dropbox.com/u/126064/dataich.github.io.images/virtual_desktop.jpg)

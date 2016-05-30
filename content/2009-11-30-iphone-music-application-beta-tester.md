@@ -24,7 +24,7 @@ Title: iPhone音楽系アプリベータテスタの募集
 
 ## 応募方法
 
-下記アドレスに、「機種名、[UDID](http://blog.dataich.com/2009/11/30/iphone-udid/)、Googleグループに参加できるメールアドレス、できればTwitterアカウント」をメールしてください。
+下記アドレスに、「機種名、[UDID](http://dataich.github.io/2009/11/30/iphone-udid/)、Googleグループに参加できるメールアドレス、できればTwitterアカウント」をメールしてください。
 
 > taichiro.yoshida@gmail.com
 

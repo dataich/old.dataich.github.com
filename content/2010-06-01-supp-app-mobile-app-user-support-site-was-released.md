@@ -8,7 +8,7 @@ Title: SuppApp - モバイルアプリユーザサポートサイトを手軽に
 非常に良くできたサイトで、一通りの機能は揃ってます。
 *   アプリの紹介ページを当ブログ内に作成
 
-[iPhonePSD](http://www.teehanlax.com/blog/2009/06/18/iphone-gui-psd-30/)を使わせていただいて、iPhone端末画像にスクリーンショットをはめ込み（[参照](http://blog.dataich.com/lang/en/iphone-app/easy-beat/)）
+[iPhonePSD](http://www.teehanlax.com/blog/2009/06/18/iphone-gui-psd-30/)を使わせていただいて、iPhone端末画像にスクリーンショットをはめ込み（[参照](http://dataich.github.io/lang/en/iphone-app/easy-beat/)）
 そして、現在とあるiPadアプリの開発を行っているのですが、リリース時にまた上記のような事をしなくてはいけないのかと思うと、少々面倒臭くなってきました。そこでこの一連の流れをモバイルアプリに特化してサービスにしてしまおうと考え、会社で業務としてやらせてもらうことになりました。
 
 登録は数分で済むと思いますので、是非皆様にも登録していただければ幸いです。
